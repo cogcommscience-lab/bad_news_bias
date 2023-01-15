@@ -30,10 +30,12 @@ In anew_sentiment_analysis.py, update the nlp path to reflect where you stored t
 In anew_sentiment_analysis.py, update the anew path to reflect where you stored the ANEW dictionary
 Important:
 	News headlines should be a .txt file where each row encodes one headline
-	The code works at the sentence level, and sentences are determined by a "."
+	The code works at the sentence level, and sentences are determined by a "." "!" "?"
 	So, if a headline includes two sentences split by a ".", each sentence will get its own score
 	Alternatively, headlines will be grouped together into one long sentence until a "." is found.
 	Therefore, be careful to make sure each headline has only one "." at the very end of the headline.
+	Delete all other instances of "?" and "!"
+	Remeber to use the raw "economic_news_arrticles_usa_2021_headlines.csv" file for headline testing; it includes punctuation
 
 ## Run the code
 $ python anew_sentiment_analysis.py --dir /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --file /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_news_arrticles_usa_2021_headlines_only.txt --out /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --mode mean
