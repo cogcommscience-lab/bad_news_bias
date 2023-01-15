@@ -1,6 +1,7 @@
 # How To Score Headlines
 
-## Dependencies
+## Scoring using ANEW
+### Dependencies
 Stanford Core NLP: https://stanfordnlp.github.io/CoreNLP/
 Download, unzip, and place in home directory
 Also install using python, e.g., pip install stanfordnlp
@@ -25,7 +26,7 @@ Borrowed from: https://github.com/dwzhou/SentimentAnalysis
 News Headlines
 see economic_news_arrticles_usa_2021_headlines_only.txt uploaded to GitHub repo
 
-## Get The Code Working
+### Get The ANEW Code Working
 In anew_sentiment_analysis.py, update the nlp path to reflect where you stored the Stanford Core NLP Directory
 In anew_sentiment_analysis.py, update the anew path to reflect where you stored the ANEW dictionary
 Important:
@@ -37,7 +38,21 @@ Important:
 	Delete all other instances of "?" and "!"
 	Remeber to use the raw "economic_news_arrticles_usa_2021_headlines.csv" file for headline testing; it includes punctuation
 
-## Run the code
+### Run the ANEW code
 $ python anew_sentiment_analysis.py --dir /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --file /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_news_arrticles_usa_2021_headlines_only.txt --out /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --mode mean
 
 This will take... a while
+
+## Scoring Using Lexicoder
+### Dependencies
+Lexicoder scording code
+lexicoder_sentiment_analysis.R
+
+Lexicoder preprocessing script
+LSDprep_dec2017.R
+
+Raw data
+see economic_news_arrticles_usa_2021_headlines_only_with_head.csv uploaded to GitHub Repo
+
+### Run the Lexicoder Code
+See comments in lexicoder_sentiment_analysis.R
