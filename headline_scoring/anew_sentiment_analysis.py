@@ -21,13 +21,13 @@ import statistics
 import time
 import argparse
 from stanfordcorenlp import StanfordCoreNLP
-nlp = StanfordCoreNLP('/home/huskey/stanford-corenlp-full-2018-10-05')
+nlp = StanfordCoreNLP('/home/rwhuskey/stanford-corenlp-4.5.1')
 
 from nltk import tokenize
 from nltk.corpus import stopwords
 
 stops = set(stopwords.words("english"))
-anew = "/home/huskey/github_repos/movie_selection/generate_summaries/anew/english_shortened.csv"
+anew = "/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/english_shortened.csv"
 
 
 # performs sentiment analysis on inputFile using the ANEW database, outputting results to a new CSV file in outputDir
