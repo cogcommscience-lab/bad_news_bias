@@ -8,8 +8,7 @@ Stanford Core NLP: https://stanfordnlp.github.io/CoreNLP/
 
 - Also install using python, e.g., from a terminal using
 
-
-	$ pip install stanfordnlp
+	`$ pip install stanfordnlp`
 
 NLTK: https://www.nltk.org/
 
