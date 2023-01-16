@@ -102,3 +102,16 @@ textstat
 
 ## Preprocessing Notes
 When scoring using Lexicoder, the pre-processing steps break raw headline 6023 into two headlines. In the raw lexicoder output, these are text6023 and text6024. Text6023 was manually deleted from the lexicoder deleted since it is just ` Condor Gold Plc ( \ "" Condor Gold\ ` and text6024 is retained as it is `  Condor\ "" or the \ "" Company\ "" ) Exercise of Warrants and Receipt of £25 , 833 . `. This information doesn't really matter, unless you want to do convergent validity analyses between the ANEW and lexicoder dictionaries. At which point, each score vector needs to be of the same length with each row belonging to the same document. Deleting text6023 from the lexicoder output makes this possible.
+
+
+## Checking Convergent Validity
+
+Convergent validity code
+
+- `convergent_validity.R`
+
+Convergent validity data
+
+- `convergent_validity_data.csv`
+
+This code looks at the relationship between automated text features
