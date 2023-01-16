@@ -14,8 +14,7 @@ NLTK: https://www.nltk.org/
 
 - Install using e.g., from a terminal using
 
-
-	$ pip install --user -U nltk
+	`$ pip install --user -U nltk`
 
 After installing, open Python in a terminal and install stopwords and punkt wordnet
 
