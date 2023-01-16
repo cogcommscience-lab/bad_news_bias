@@ -86,3 +86,16 @@ See comments in lexicoder_sentiment_analysis.R
 
 Note... step3 requires an ugly hack: export csv, restructure w/ restructure.py, load back to R
 
+## Scoring Flesch Reading Ease and Word Count
+
+In an interactive python environment (e.g., jupyter notebook), run the reading_ease.ipynb code
+
+### Dependencies
+
+textstat
+
+- https://pypi.org/project/textstat/
+
+- Install using e.g., from a terminal using
+
+	`$ pip install textstat`
