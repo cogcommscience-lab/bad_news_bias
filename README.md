@@ -5,12 +5,12 @@ NOTE: This project is still in development and the code is still a work in progr
 
 ## Project Team
 
-Richard Huskey: https://cogcommscience.com/
-Amber Boydstun: http://www.amber-boydstun.com/
-Allison Eden: https://comartsci.msu.edu/our-people/allison-eden
-Jason Coronel: https://www.commcogsystems.com/
-Xuanjun (Jason) Gong: https://cogcommscience.com/
-Ezgi Ulusoy: https://comartsci.msu.edu/our-people/ezgi-ulusoy
+- Richard Huskey: https://cogcommscience.com/
+- Amber Boydstun: http://www.amber-boydstun.com/
+- Allison Eden: https://comartsci.msu.edu/our-people/allison-eden
+- Jason Coronel: https://www.commcogsystems.com/
+- Xuanjun (Jason) Gong: https://cogcommscience.com/
+- Ezgi Ulusoy: https://comartsci.msu.edu/our-people/ezgi-ulusoy
 
 
 ## Project Rationale
