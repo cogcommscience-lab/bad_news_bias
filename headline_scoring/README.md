@@ -47,6 +47,7 @@ This will take... a while
 ### Dependencies
 Lexicoder scording code
 lexicoder_sentiment_analysis.R
+restructure.py
 
 Lexicoder preprocessing script
 LSDprep_dec2017.R
@@ -56,3 +57,5 @@ see economic_news_arrticles_usa_2021_headlines_only_with_head.csv uploaded to Gi
 
 ### Run the Lexicoder Code
 See comments in lexicoder_sentiment_analysis.R
+Note... step3 requires an ugly hack: export csv, restructure w/ restructure.py, load back to R
+
