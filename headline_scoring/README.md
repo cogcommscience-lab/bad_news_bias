@@ -4,9 +4,10 @@
 ### Dependencies
 Stanford Core NLP: https://stanfordnlp.github.io/CoreNLP/
 
-Download, unzip, and place in home directory
+- Download, unzip, and place in home directory
 
-Also install using python, e.g., pip install stanfordnlp
+- Also install using python, e.g., from a terminal using
+	$ pip install stanfordnlp
 
 NLTK: https://www.nltk.org/
 
