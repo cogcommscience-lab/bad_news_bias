@@ -25,7 +25,7 @@ library(corrplot)
 
 
 # Step 1: Read in the data
-scores = read.csv("merged_sentiment_scores.csv", stringsAsFactors=FALSE)
+scores = read.csv("convergent_validity_data.csv", stringsAsFactors=FALSE)
 
 
 
