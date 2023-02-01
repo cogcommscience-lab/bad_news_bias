@@ -115,3 +115,6 @@ Convergent validity data
 - `convergent_validity_data.csv`
 
 This code looks at the relationship between automated text features
+
+## Scoring With Human Annotators
+Headlines were manually inspected and n=250 were selected for rating (using the SAM scale) via human annotators. These headlines were slightly edited for clarity and rescored using ANEW and Lexicoder. The updated headlines exist in the `subsample_for_human_annotation` directory. Headlines split naturally into four cells (arousal high/low; valence high/low) based on dictionary-based scoring (ANEW, Lexicoder).
