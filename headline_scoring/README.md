@@ -117,4 +117,8 @@ Convergent validity data
 This code looks at the relationship between automated text features
 
 ## Scoring With Human Annotators
-Headlines were manually inspected and n=250 were selected for rating (using the SAM scale) via human annotators. These headlines were slightly edited for clarity and rescored using ANEW and Lexicoder. The updated headlines exist in the `subsample_for_human_annotation` directory. Headlines split naturally into four cells (arousal high/low; valence high/low) based on dictionary-based scoring (ANEW, Lexicoder).
+Headlines were manually inspected and an initial n=250 were selected for further evaluation (see `anew_lexi_convergent_validity_subsample.csv`. These headlines were slightly edited for clarity and rescored using ANEW and Lexicoder. Results showed high correlations between arousal/valence, and arousal/valence/wordcount. 
+
+From, 200 headlines were selected and slightly edited for clarity, and in an attempt to destroy correlations between arousal and valence. Edited headlines were rescored using ANEW and Lexicoder (see `anew_lexi_convergent_validity_subsample_second_pass.csv`). The updated headlines exist in the `subsample_for_human_annotation` directory. Headlines split naturally into four cells (arousal high/low; valence high/low) based on dictionary-based scoring (ANEW, Lexicoder).
+
+The second_pass headlines were then used to human annotation rating (using the SAM scale).
