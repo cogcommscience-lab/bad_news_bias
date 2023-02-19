@@ -25,7 +25,7 @@ library(corrplot)
 
 
 # Step 1: Read in the data
-scores = read.csv("convergent_validity_data.csv", stringsAsFactors=FALSE)
+scores = read.csv("subsample_for_human_annotation/anew_lexi_convergent_validity_subsample_third_pass.csv", stringsAsFactors=FALSE)
 
 
 

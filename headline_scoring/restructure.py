@@ -1,5 +1,5 @@
 import pandas as pd
-with open('/home/rwhuskey/Downloads/preproc_headlines.csv') as f:
+with open('/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_preproc_headlines.csv') as f:
     lines = f.readlines()
 
 text = lines[1]
@@ -11,4 +11,4 @@ headline_df.headlines.iloc[0] =  ' Covid - 19 vaccine is safe for those with foo
 headline_df.headlines.iloc[-1] = ' The Tiwa Select Founder\'s Perfect Friday to Tuesday in Mexico City .'
 
 
-headline_df.to_csv("/home/rwhuskey/Downloads/headlines_structured.csv")
+headline_df.to_csv("/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_headlines_structured.csv")

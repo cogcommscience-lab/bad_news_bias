@@ -15,8 +15,10 @@
   # Step 0: Load packages * and set directory for preprocessing functions
   # Step 1: Read in the data
   # Step 2: Pre-process the data using the five routines described in LSDprep_dec2017.R
-  # Step 3: Score the pre-processed data
+  # Step 3: Score the pre-processed data*
   # Step 4: Write scored headlines out as csv flie
+
+#*Step 3 has an ugly hack where the data are exported, restructured in python, and reloaded
 
 # Dependencies
   # LSDprep_dec2017.R
@@ -98,6 +100,3 @@ cleaned_lexicoder_scores <- dfm(cleaned_corp_headlines, dictionary = data_dictio
 cleaned_lexicoder_df <- convert(cleaned_lexicoder_scores, to = "data.frame")
 
 write.csv(cleaned_lexicoder_df,"cleaned_lexicoder_scores.csv", row.names = TRUE)
-
-
-

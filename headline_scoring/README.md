@@ -121,4 +121,6 @@ Headlines were manually inspected and an initial n=250 were selected for further
 
 From, 200 headlines were selected and slightly edited for clarity, and in an attempt to destroy correlations between arousal and valence. Edited headlines were rescored using ANEW and Lexicoder (see `anew_lexi_convergent_validity_subsample_second_pass.csv`). The updated headlines exist in the `subsample_for_human_annotation` directory. Headlines split naturally into four cells (arousal high/low; valence high/low) based on dictionary-based scoring (ANEW, Lexicoder).
 
-The second_pass headlines were then used to human annotation rating (using the SAM scale).
+The second pass file had a problem in that only 40 had an ANEW arousal score greater than the scale midpoint (5). A third round of editing was completed and the revised headlines rescored (`anew_lexi_convergent_validity_subsample_third_pass.csv`). These split very cleanly into four cells, and are orthogonal in terms of arousal and valence. These were the final headlines used in the human annotation cross validation study.
+
+The third_pass headlines were then used to human annotation rating (using the SAM scale).
