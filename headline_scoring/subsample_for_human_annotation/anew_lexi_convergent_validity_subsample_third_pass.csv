@@ -1,0 +1,204 @@
+"key","headline","doc_id","lexi_negative","lexi_positive","lexi_neg_positive","lexi_neg_negative","net_lexi_tone","anew_valence","anew_valence_label","anew_arousal","anew_dominance","num_words_ex_stopwords","num_words_inc_stopwords","flesch_score"
+1,"Stock Market Newbies, This Guide Is For You.","text1",0,1,0,0,0.25,5.71333333333333,"neutral",3.46,5.38,4,8,88.74
+2,"Funding And Childcare Gaps Keep Women-Led Businesses From Growing.","text2",0,0,0,0,0,5.87,"neutral",3.57714285714286,5.30714285714286,8,9,45.42
+3,"How Often Can You Refinance a Home Loan More Than You Might Think.","text3",0,0,0,0,0,6.11666666666667,"positive",3.61,5.68,6,13,92.12
+4,"Northern Trust Chief Economist Named Most Accurate Forecaster.","text4",0,2,0,0,0.285714285714286,6.352,"positive",3.622,5.706,7,8,37.98
+5,"Double Bottomline Corp Completes the Purchase of Bancorp, Inc and Community Savings.","text5",1,0,0,0,-0.111111111111111,6.21,"positive",3.7125,6.5075,9,12,42.38
+6,"Answering Your Questions On Stocks, Bagged Milk, Shrinkflation, and Wealthy Tech.","text6",0,1,0,0,0.125,5.98428571428571,"neutral",3.76142857142857,5.72,8,11,68.77
+7,"What's keeping America's top economists up at night.","text7",0,1,0,0,0.2,6.33333333333333,"positive",3.77666666666667,5.72666666666667,5,8,46.44
+8,"Pot is legal in NY state, and the economic opportunities are sky high.","text8",0,1,0,0,0.125,6.01,"positive",3.8,5.86,8,13,66.74
+9,"Australian shares track Wall St higher on economic recovery hopes.","text9",0,2,0,0,0.222222222222222,6.01166666666667,"positive",3.815,5.44833333333333,9,10,61.33
+10,"US-Backed Economist to Become First Woman Head of WTO.","text10",0,0,0,0,0,6.272,"positive",3.834,5.854,8,9,62.34
+11,"Fact check: More money spent on housing National Guard in DC than shelter for migrants.","text11",0,0,0,0,0,6.20625,"positive",3.88,5.72375,"10",15,73.17
+12,"Disney+ subscribers keep growing, but they're making Disney less money.","text12",0,0,0,0,0,6.3,"positive",3.902,5.714,8,10,61.33
+13,"Bank of Blue Valley Launches New Home Improvement Loan for Moderate- Income Consumers.","text13",0,2,0,0,0.181818181818182,6.25090909090909,"positive",4.05909090909091,5.62727272727273,"11",13,58.28
+14,"My Aunt Has Been Spending My Grandmother's Savings on Psychics.","text14",0,0,0,0,0,6.44,"positive",3.9125,5.4775,5,10,69.79
+15,"Food, farm plan aims to boost economic output by 26% by 2030.","text15",0,0,0,0,0,6.04428571428571,"positive",3.94142857142857,5.94428571428571,7,12,84.68
+16,"For Tesla, bitcoin was a bigger moneymaker last quarter than cars.","text16",0,0,0,0,0,6.12,"positive",3.945,6.225,7,11,60.31
+17,"Eastland Shoe Corp Secures $5M Credit Facility from Cambridge Savings Bank.","text17",0,2,0,0,0.222222222222222,5.838,"neutral",3.714,5.45,9,11,51.85
+18,"5 Financial Tasks for Fall, and Kid Debit Cards.","text18",0,0,0,0,0,5.534,"neutral",4,4.944,6,9,87.72
+19,"Free grocery store opens in school district with high number of students.","text19",0,2,0,0,0.222222222222222,6.11444444444444,"positive",4.01555555555556,5.95777777777778,9,12,84.68
+20,"What Is a Micromortgage The Loan That Can Help You Buy a Home With Zero Down Payment.","text20",0,1,0,0,0.142857142857143,6.12,"positive",4.02,5.88,7,17,79.6
+21,"Is California An Economic Paradise; Leading Economist Thinks So.","text21",0,1,0,0,0.166666666666667,6.085,"positive",4.035,5.9575,6,9,28.5
+22,"BBVA Research publishes its first quarter US Economic Outlook.","text22",0,0,0,0,0,6.1,"positive",4.045,6.05833333333333,8,9,36.96
+23,"Saving For A Home-Downpayment Now Takes Even Longer Thank The Fed.","text23",0,1,0,0,0.125,6.8325,"positive",4.0625,6.2075,8,11,77.23
+24,"Countering Uncertainty, and Building Wealth Early.","text24",1,1,0,0,0,5.545,"neutral",4.09,5.5725,5,6,14.63
+25,"Sterling National Bank Partners with Goalsetter to Bring Savings Accounts to One Million.","text25",0,1,0,0,0.1,6.16625,"positive",4.095,5.65125,"10",13,58.28
+26,"7 Winter Home Maintenance Tasks That Will Save You Money (and Your Sanity).","text26",0,1,0,0,0.142857142857143,6.47,"positive",4.10285714285714,5.93142857142857,7,13,66.74
+27,"Stocks gain on optimism over economic recovery.","text27",0,2,0,0,0.4,6.028,"positive",4.104,5.784,5,7,38.99
+28,"Social Security benefits get a huge bump But retirees need to do more to protect savings.","text28",0,2,0,0,0.2,6.0625,"positive",4.11375,5.5225,"10",16,55.24
+29,"He knows how to make money: Here are 3 stocks for your retirement portfolio.","text29",0,0,0,0,0,6.34333333333333,"positive",4.12,5.64666666666667,6,14,74.19
+30,"Monolith Receives Conditional Approval for a $1B US Department of Energy Loan.","text30",0,1,0,0,0.125,5.925,"neutral",3.90666666666667,5.47833333333333,8,12,42.38
+31,"Dollar slides on improving European, UK economic outlooks, commodities bounce.","text31",0,1,0,0,0.111111111111111,6.06428571428571,"positive",4.13714285714286,5.49571428571429,9,10,27.49
+32,"Michigan finds new economic development chief in New Orleans.","text32",0,0,0,0,0,6.33166666666667,"positive",4.15,5.41,8,9,45.42
+33,"US stocks rise on hopes of more economic support; Canada down.","text33",0,2,0,0,0.285714285714286,6.14,"positive",4.152,5.776,7,11,77.23
+34,"MoneyLion Raises Annual Revenue Guidance.","text34",0,0,0,0,0,6.34,"positive",4.16,5.53,5,5,15.64
+35,"3 Crypto Questions, and Improving Credit to Buy a House.","text35",0,2,0,0,0.333333333333333,6.302,"positive",4.18,6.022,6,10,69.79
+36,"Business model: How to make money with healthy beautiful feet.","text36",0,2,0,0,0.285714285714286,6.44285714285714,"positive",4.40142857142857,6.22285714285714,7,10,69.79
+37,"IMF praises progress in South, calls for further economic reform.","text37",0,2,0,0,0.285714285714286,6.11166666666667,"positive",4.07333333333333,5.56666666666667,7,10,69.79
+38,"LoanSnap Secures $30 million in Series B Financing.","text38",0,1,0,0,0.166666666666667,6.62,"positive",4.2,6.29,6,8,63.36
+39,"Help My Stepdad Has Become Obsessed With 'Saving My Soul'.","text39",0,1,0,0,0.166666666666667,6.4,"positive",4.22,6.346,6,10,78.25
+40,"What Keynes can teach about economic forecasting : The Indicator from Planet Money.","text40",0,0,0,0,0,6.2,"positive",4.232,5.492,7,12,42.38
+41,"US money market funds see biggest weekly inflow in 13 months.","text41",0,0,0,0,0,6.22333333333333,"positive",4.23333333333333,5.87166666666667,9,11,68.77
+42,"Bonds see large inflows, TIPS pull in record money in weekly flows.","text42",0,0,0,0,0,6.0625,"positive",4.26625,5.76875,"10",12,84.68
+43,"Another round of stimulus payments: Here's what experts think you'll do with the money.","text43",0,1,0,0,0.142857142857143,6.2,"positive",4.38333333333333,5.985,7,14,65.73
+44,"Global Study: People Trust Robots More Than Themselves with Money.","text44",0,1,0,0,0.166666666666667,6.26166666666667,"positive",4.26833333333333,5.65166666666667,6,10,69.79
+45,"Analyst: Economy Is Better Thanks To 'Dunkirk'-Like Rescue By Fed, Congress.","text45",0,3,0,0,0.333333333333333,5.90714285714286,"neutral",4.31,5.44714285714286,9,11,51.85
+46,"MX Announces Keynote Money Experience Summit 2021 at Utah's Snowbird Mountain Resort.","text46",0,0,0,0,0,6.44142857142857,"positive",4.27857142857143,5.9,"10",12,42.38
+47,"The couple who used lessons from 2008 to navigate 2020.","text47",0,0,0,0,0,5.7275,"neutral",4.28,5.7775,4,10,86.71
+48,"New to the stock market Here's what you need to know to make money from your investment.","text48",0,0,0,0,0,6.24875,"positive",4.295,5.5225,8,17,88.06
+49,"Federal home loan bank awards $343 million for affordable housing initiatives.","text49",0,2,0,0,0.222222222222222,6.24333333333333,"positive",4.20888888888889,5.52777777777778,9,11,51.85
+50,"How to invest in the stock market to make money.","text50",0,0,0,0,0,6.212,"positive",4.306,5.774,5,10,86.71
+51,"An Exciting Interview on the RedChip Money Report to Air on Bloomberg.","text51",0,1,0,0,0.142857142857143,6.242,"positive",5.386,6.206,7,12,59.3
+52,"2021 Mercedes-Benz S-Class First Ride: Old-Money Weekend, New Sedan.","text52",0,0,0,0,0,6.19,"positive",5.01375,5.72125,"10",9,79.26
+53,"5 money risks in retirement you should be aware of and prepare for now.","text53",1,0,0,0,-0.2,6.21,"positive",5.246,6.028,5,14,82.65
+54,"5 dangerous money risks in retirement you should be aware of and prepare for now.","text54",2,0,0,0,-0.333333333333333,5.56333333333333,"neutral",5.50666666666667,5.45,6,15,73.17
+55,"A billionaire Provides $87 Million in Fannie Mae Financing for a Multifamily Property in Maryland.","text55",0,0,0,0,0,6.206,"positive",5.448,5.878,9,15,30.87
+56,"8 Clever Hints That can Save You Money On A Mortgage.","text56",0,1,0,0,0.2,6.244,"positive",5.182,5.89,5,11,94.15
+57,"Economic Advancement: New Mexico has Some of the Cheapest Renewable Energy.","text57",0,2,0,0,0.285714285714286,6.7875,"positive",5.205,5.585,7,11,26.47
+58,"Zeelo raises $12 million for expansion after 600% growth.","text58",0,0,0,0,0,6.7925,"positive",5.2825,5.68,5,9,53.88
+59,"Capstone Achieved Cash Flow of $95 million and Is Now Debt Free.","text59",1,2,0,0,0.142857142857143,6.44833333333333,"positive",5.28166666666667,5.7,7,12,93.14
+60,"Massachusetts Innovation Network Announces the 2021 Eddies Winners.","text60",0,2,0,0,0.333333333333333,6.345,"positive",5.2575,6.1675,6,8,4.14
+61,"Explainer: Robinhood makes most of its money from PFOF What is it.","text61",0,0,0,0,0,6.595,"positive",5.265,6.27,5,12,84.68
+62,"How Banking with a Credit Union Can Save you Money spectacularly.","text62",0,2,0,0,0.333333333333333,6.136,"positive",4.83,5.616,6,11,60.31
+63,"How much money should you have to buy your first mansion.","text63",0,0,0,0,0,6.9675,"positive",5.2225,6.495,5,11,94.15
+64,"It's Tempting to take the Money My Kids Inherited From Their Godmother.","text64",0,0,0,0,0,6.47166666666667,"positive",5.24166666666667,5.245,6,12,59.3
+65,"In San Antonio, you need this much money to be 'rich'.","text65",0,1,0,0,0.166666666666667,6.46,"positive",5.78,6.07,6,11,85.69
+66,"In Texas, you need this much money to be 'rich'.","text66",0,1,0,0,0.2,6.46,"positive",5.78,6.07,5,10,103.63
+67,"Is the gig economy improving the lives of independent women.","text67",0,1,0,0,0.166666666666667,6.14833333333333,"positive",5.30333333333333,5.75333333333333,6,10,44.41
+68,"Here are 3 ways to accelerate your investments when money is tight.","text68",0,0,0,0,0,6.0625,"positive",5.1325,5.6225,5,12,67.76
+69,"The US fintech N26 valued at more than $9 billion after fundraising.","text69",0,0,0,0,0,6.53666666666667,"positive",5.36,6.53333333333333,5,12,76.22
+70,"American Scientist Awarded 2020 Cybersecurity Excellence Award.","text70",0,3,0,0,0.5,7.355,"positive",5.285,6.97,6,7,-28.7
+71,"NYC overpays FDNY EMTs and paramedics by $35 million and now wants the money back.","text71",0,0,0,0,0,6.114,"positive",5.004,5.45,9,15,81.63
+72,"Experts introduce a Brilliant 20-Day Money Challenge.","text72",1,2,0,0,0.166666666666667,6.59333333333333,"positive",5.04666666666667,6.25,6,7,30.53
+73,"Celebrity argues against exotic travels, saying billionaires should focus on Earth.","text73",2,1,0,0,-0.125,6.15375,"positive",5.58125,5.96,8,11,43.39
+74,"Promising free money, a millionaire enters NYC mayoral race.","text74",0,1,0,0,0.125,6.80666666666667,"positive",5.29666666666667,6.06166666666667,8,9,53.88
+75,"Fantastic Midyear Money Check-in and Managing Finances Abroad.","text75",0,1,0,0,0.142857142857143,6.306,"positive",5.152,5.73,7,8,46.44
+76,"Sound Money Is A Prerequisite To Peace, Prosperity, And Freedom.","text76",0,4,0,0,0.666666666666667,7.224,"positive",5.324,6.582,6,10,44.41
+77,"Tesla money train enriches more than just CEO.","text77",0,1,0,0,0.2,6.73,"positive",5.455,6.02,5,8,71.82
+78,"Tiziana Life Sciences Interview on the RedChip Money Report.","text78",0,0,0,0,0,5.91,"neutral",5.514,6.146,7,9,53.88
+79,"To Be a Millionaire, I Had to forget What I learned about Money.","text79",1,1,0,0,0,6.25,"positive",5.5575,5.6375,4,13,83.66
+80,"Twitter wants everybody on the platform to potentially make more money with them.","text80",0,0,0,0,0,6.0475,"positive",5,6.0875,7,13,58.28
+81,"US sales surge as holiday shopping starts, brightening economy.","text81",0,2,0,0,0.25,5.97166666666667,"neutral",5.275,5.81333333333333,8,9,45.42
+82,"What I learned about money from motherhood: 8 mothers weigh in.","text82",0,1,0,0,0.2,6.52,"positive",5.21,6.086,5,11,77.23
+83,"What smart money is saying about the exhilarating new sports car.","text83",0,2,0,0,0.285714285714286,7,"positive",4.83,6.30833333333333,7,11,68.77
+84,"A finance company creates new Money Exchange Method.","text84",0,0,0,0,0,6.31285714285714,"positive",5.15428571428571,5.73142857142857,7,8,46.44
+85,"Cybersecurity startup Illumio raises $225 million, valued at about $28 billion.","text85",0,1,0,0,0.142857142857143,7.1875,"positive",5.4275,6,7,11,18.01
+86,"GM just sped up the depreciation of everything it owns.","text86",1,0,0,0,-0.2,6.71,"positive",6.8,6.58,5,10,61.33
+87,"Colorado's billionaires about $10B richer despite pandemic.","text87",0,1,0,0,0.2,6,"neutral",6.75,6.36,5,7,30.53
+88,"Peter Schiff says Too Much Money; Not Enough Stuff.","text88",1,0,0,0,-0.142857142857143,5.71666666666667,"neutral",5.92333333333333,6.12333333333333,7,9,96.18
+89,"HanaGold CEO proclaims Gold should be approachable to everyone.","text89",0,1,0,0,0.166666666666667,6.33,"positive",5.595,5.95,6,9,62.34
+90,"When a post-policy party confronts an energy crisis.","text90",2,0,0,0,-0.5,5.18,"neutral",6.1825,5.53,4,8,29.52
+91,"Hancock Whitney and FHLB Dallas Award $20K to Gulfport Nonprofit.","text91",0,1,0,0,0.142857142857143,7.86,"positive",5.85,6.9,7,10,61.33
+92,"Surprise, Allbird's Cyber Monday Sale Is Live.","text92",0,0,0,0,0,7.20666666666667,"positive",5.77666666666667,5.94333333333333,6,7,64.37
+93,"Mobilisation for Tempus' 2021 Gold Exploration Drilling.","text93",0,1,0,0,0.2,6.995,"positive",5.675,5.58,5,7,30.53
+94,"SAS Viya delivers innovation and analytics for all.","text94",0,1,0,0,0.2,6.475,"positive",5.585,6.56,5,8,29.52
+95,"UBS reaps rich rewards from pandemic with best pre-tax profit since 2006.","text95",0,3,0,0,0.375,6.62,"positive",5.5775,6.345,8,12,76.22
+96,"Why Purchase Money Mortgages Are A Risky Money Move.","text96",1,0,0,0,-0.166666666666667,5.48666666666667,"neutral",5.56666666666667,5.42666666666667,6,9,79.26
+97,"Ecoark Awarded $115 Million in Lawsuit Against Walmart.","text97",2,1,0,0,-0.2,6.08333333333333,"positive",5.54,5.30666666666667,5,8,71.82
+98,"How Long Will The US Dollar's Dominance Last.","text98",0,1,0,0,0.2,6.29,"positive",5.535,4.83,5,8,80.28
+99,"Fast food struggles to hire as demand soars, US economy roars.","text99",1,0,0,0,-0.111111111111111,5.33142857142857,"neutral",5.52857142857143,5.35142857142857,9,11,77.23
+100,"Psychedelic startup Atai targets valuation of $23 billion in US IPO.","text100",0,0,0,0,0,5.57333333333333,"neutral",5.47666666666667,5.64,8,11,43.39
+101,"TikTok's Army Of 'Finfluencers' Rides 'Meme Stonk' Boom To Riches.","text101",0,1,0,0,0.125,5.6225,"neutral",5.4925,5.475,8,10,78.25
+102,"Revamp your wardrobe with 25% off at Reformation this weekend.","text102",0,0,0,0,0,6.63,"positive",5.485,6.675,4,10,69.79
+103,"US shares pare losses as Western economy rebounds.","text103",1,0,0,0,-0.142857142857143,4.64,"neutral",4.574,5.138,7,8,63.36
+104,"Analysts ask, Just How Transitory Is Inflation?","text104",0,0,0,0,0,4.62,"neutral",3.74,5.01666666666667,4,7,30.53
+105,"Former WA auditor reports to jail for tax fraud conviction.","text105",3,0,0,0,-0.375,3.14666666666667,"negative",4.34333333333333,4.36666666666667,8,10,61.33
+106,"Experts weigh in on the ECB's inflation conundrum.","text106",0,1,0,0,0.2,4.48,"neutral",3.99,4.9675,5,8,63.36
+107,"South's inflation slows to 38% in August.","text107",0,0,0,0,0,4.34,"neutral",3.62333333333333,4.76,4,7,81.29
+108,"Chaos, the weatherman and inflation: What is the connection.","text108",1,0,0,0,-0.25,4.095,"neutral",4.5375,4.85,4,9,53.88
+109,"US political divisions crash into debt ceiling.","text109",2,0,0,0,-0.333333333333333,3.802,"negative",4.16,4.346,6,7,30.53
+110,"Take Five asks: Who is afraid of US inflation?","text110",1,0,0,0,-0.166666666666667,4.266,"neutral",4.234,4.696,6,9,96.18
+111,"Corruption, economic woes spark deadly protests in South.","text111",4,0,0,0,-0.571428571428571,4.28,"neutral",4.53142857142857,4.31571428571429,7,8,63.36
+112,"Debt limit appears defused (for now) but what does the next year hold.","text112",2,0,0,0,-0.285714285714286,4.706,"neutral",4.33,4.984,7,13,92.12
+113,"Analysis: Turkey and UAE rein in dispute that fueled conflict and hurt economy.","text113",3,0,0,0,-0.333333333333333,3.9625,"negative",4.24,4.7475,9,13,58.28
+114,"US consumer spending decreases further; inflation creeping up.","text114",1,0,0,0,-0.166666666666667,3.9925,"negative",4.0375,4.38,6,8,29.52
+115,"Wall Street down as retailers stoke inflation fears.","text115",1,0,0,0,-0.166666666666667,3.9925,"negative",4.2475,4.2375,6,8,71.82
+116,"Analyst Breaks Down The Inflation Tax and what it means for you.","text116",0,0,0,0,0,3.688,"negative",4.356,4.096,5,12,84.68
+117,"Economic crisis, severe shortages make Lebanon 'unlivable'.","text117",3,0,0,0,-0.428571428571429,4.016,"neutral",4.546,4.32,7,7,30.53
+118,"Defense Secretary warns debt ceiling lapse could mean no paychecks for troops.","text118",3,0,0,0,-0.3,4.05555555555556,"neutral",4.32111111111111,4.75,"10",12,76.22
+119,"US Secretary of Treasury  warns Oct 18 could be breaking point for US debt.","text119",3,0,0,0,-0.3,4.73,"neutral",4.54,5.41166666666667,"10",14,82.65
+120,"NYC taxi drivers stage hunger strike as medallion debt crisis intensifies.","text120",2,0,0,0,-0.2,4.12,"neutral",4.56125,4.25625,"10",11,68.77
+121,"Distraction As Policy While Our Economic Rome Burns.","text121",2,0,0,0,-0.4,4.1625,"neutral",4.065,4.555,5,8,46.44
+122,"Toronto stocks up on easing worries over US debt ceiling.","text122",2,1,0,0,-0.142857142857143,4.218,"neutral",4.192,4.616,7,10,78.25
+123,"Shocking Miss: The US Economy Added Just 266,000 Jobs in April, Unemployment Ticks Up.","text123",1,0,0,0,-0.111111111111111,4.23,"neutral",4.56142857142857,4.45714285714286,9,14,74.19
+124,"The Debt Limit And The Senate's Cloture Share A History Both Were Born With A War.","text124",3,0,0,0,-0.375,4.23428571428571,"neutral",4.45714285714286,4.24285714285714,8,16,80.62
+125,"A Confused Wall Street Reacts To Evergrande's Debt Payment.","text125",2,0,0,0,-0.285714285714286,4.25,"neutral",4.41333333333333,4.79666666666667,7,9,62.34
+126,"Lawmakers set up showdown by attaching debt limit to bill to avert government shutdown.","text126",3,0,0,0,-0.3,4.14111111111111,"neutral",4.10777777777778,4.59444444444444,"10",14,57.27
+127,"Sluggish US economy falls behind the pack again.","text127",1,0,0,0,-0.166666666666667,4.2825,"neutral",4.215,4.635,6,8,71.82
+128,"Wall Street surges as worries over debt ceiling subside.","text128",2,1,0,0,-0.142857142857143,4.28428571428571,"neutral",4.24,4.65571428571429,7,9,87.72
+129,"Stocks Stumble For 2nd Straight Week Amid Debt Ceiling Doubts and Fears.","text129",4,0,0,0,-0.444444444444444,4.01142857142857,"neutral",4.39142857142857,4.19285714285714,9,12,93.14
+130,"US Senate appears near temporary truce in debt-ceiling standoff.","text130",1,0,0,0,-0.111111111111111,4.29857142857143,"neutral",3.74142857142857,4.70714285714286,9,9,45.42
+131,"Stocks Pump'n'Dump As Crypto Slumps Ahead Of Taper-Talk, Debt-Ceiling Doubts.","text131",4,0,0,0,-0.444444444444444,4.45166666666667,"neutral",4.01333333333333,4.57833333333333,9,10,61.33
+132,"Congress raising the debt ceiling is suddenly a problem for Republicans.","text132",2,0,0,0,-0.285714285714286,4.315,"neutral",4.21833333333333,4.68833333333333,7,11,43.39
+133,"Shortages, inflation and slow growth fog UK economy.","text133",2,0,0,0,-0.285714285714286,4.325,"neutral",4.175,4.49833333333333,7,8,63.36
+134,"Wall St opens higher as debt ceiling, inflation worries cool.","text134",2,1,0,0,-0.111111111111111,4.33857142857143,"neutral",4.32428571428571,4.69571428571429,9,10,69.79
+135,"Stocks, debt yields slip on US CPI, poor bond auction.","text135",2,0,0,0,-0.222222222222222,4.345,"neutral",4.525,4.42166666666667,9,10,103.63
+136,"S&P 500, Dow gain amid inflation concerns, debt ceiling debate.","text136",1,0,0,0,-0.111111111111111,4.35833333333333,"neutral",4.51166666666667,5.2,9,10,69.79
+137,"As Americans spend, credit card debt is ticking back up.","text137",1,0,0,0,-0.142857142857143,4.36166666666667,"neutral",3.97833333333333,4.74833333333333,7,10,78.25
+138,"Oil prices slip as economic fears offset tightening crude supplies.","text138",2,0,0,0,-0.222222222222222,4.37222222222222,"neutral",4.40333333333333,4.55555555555556,9,10,61.33
+139,"Doctor adds $650,000 in medical debt for cancer patients.","text139",2,0,0,0,-0.333333333333333,4.65666666666667,"neutral",4.32333333333333,4.52333333333333,6,9,62.34
+140,"Rental Policy Shock: 750,000 Households Are About To Be Evicted.","text140",2,0,0,0,-0.4,4.31,"neutral",4.334,5.6,5,10,78.25
+141,"James Hardie Industries Announces Debt Reduction.","text141",1,1,0,0,0,4.385,"neutral",4.2075,4.7725,6,6,48.47
+142,"Brazil federal debt falls in April, Treasury revises public financing needs.","text142",1,0,0,0,-0.1,4.39142857142857,"neutral",4.20714285714286,4.61285714285714,"10",11,51.85
+143,"Congressman: House will vote to avoid debt default, shutdown next week.","text143",3,0,0,1,-0.333333333333333,4.39875,"neutral",4.22,5.09,9,11,77.23
+144,"House passes bill to avert shutdown and suspend debt limit is unlikely.","text144",4,0,0,0,-0.444444444444444,4.37888888888889,"neutral",4.19777777777778,4.81444444444445,9,12,67.76
+145,"Medical debt was cut nearly in half in states that expanded Medicaid.","text145",1,0,0,0,-0.125,4.43,"neutral",4.328,4.712,8,12,59.3
+146,"Federal Reserve Chair downplays delta variant's threat to the economy.","text146",1,0,0,0,-0.125,4.44333333333333,"neutral",4.44666666666667,4.585,8,10,52.87
+147,"Analyst: Fake Economic Growth And Stealthy Government Default.","text147",2,0,0,0,-0.285714285714286,4.44333333333333,"neutral",4.21333333333333,4.54833333333333,7,8,37.98
+148,"Wall Street closes up amid inflation concerns, debt ceiling debate.","text148",1,0,0,0,-0.111111111111111,4.45125,"neutral",4.1125,4.99375,9,10,61.33
+149,"Experts explain: Why the debt limit is again roiling Congress.","text149",2,1,0,0,-0.166666666666667,4.436,"neutral",4.376,4.938,6,10,69.79
+150,"Evergrande founder sells 9% stake for $344 million amid debt crunch.","text150",1,0,0,0,-0.125,4.975,"neutral",4.50666666666667,5.10333333333333,8,11,85.69
+151,"Analyst Blasts Finance Minister's Bad Economics.","text151",2,0,0,0,-0.333333333333333,4.61666666666667,"neutral",4.29166666666667,4.50666666666667,6,6,14.63
+152,"US Secretary of Treasury Says Debt Ceiling Drop-Dead Date Is October 18.","text152",2,0,0,0,-0.2,4.7075,"neutral",4.26375,5.1325,"10",12,67.76
+153,"'DrDoom' Warns Goldilocks Is Dying, Fears 'Stagflationary Debt Crisis' Ahead.","text153",5,0,0,0,-0.555555555555556,2.7,"negative",5.982,3.87,9,10,69.79
+154,"'I am shocked by the overpriced': Will reopening economy mean surging prices.","text154",1,0,0,0,-0.142857142857143,4.10142857142857,"neutral",4.77,4.89428571428571,7,12,67.76
+155,"'Taper tantrum' worries creeping in, but equity crash not imminent.","text155",3,0,0,0,-0.428571428571429,3.54333333333333,"negative",5.195,4.43333333333333,7,10,52.87
+156,"Almost 9 In 10 Americans Worried About Inflation.","text156",1,0,0,0,-0.25,2.505,"negative",5.415,3.585,4,8,46.44
+157,"Americans Are Going into Debt As If Tomorrow Won't Come.","text157",1,0,0,0,-0.166666666666667,4.21,"neutral",5.74,4.36666666666667,6,10,61.33
+158,"Americans are angry at economy amid inflation woes.","text158",2,0,0,0,-0.333333333333333,3.115,"negative",5.1825,4.0475,6,8,37.98
+159,"Alarming clashes over taxes, debt limit challenge rally in US investments.","text159",5,0,0,0,-0.555555555555556,4.095,"neutral",5.28,4.37375,9,11,51.85
+160,"Debt fears feed America's property woes: Gruesome reality.","text160",3,0,0,0,-0.375,3.67714285714286,"negative",5.19,4.69142857142857,8,8,21.06
+161,"Crypto is next fintech battle for America's Gen Z.","text161",1,0,0,0,-0.142857142857143,3.52,"negative",6.25,5.63,7,9,53.88
+162,"America is now the main front in gig economy war.","text162",1,0,0,0,-0.166666666666667,4.405,"neutral",5.36,4.84,6,10,78.25
+163,"ByteDance's CEO sues Tencent for monopolistic behavior.","text163",0,0,0,0,0,3.73,"negative",5.21,5.73,6,7,30.53
+164,"Suspicious California men got arrested for $13 billion fraud scam.","text164",2,0,0,0,-0.25,3.88,"negative",5.13166666666667,4.405,8,10,44.41
+165,"Collapse In Shimao Bonds Could Be More Devastating Than Debt Crises At Evergrande And Kaisa.","text165",3,0,0,0,-0.333333333333333,2.365,"negative",5.965,3.795,9,15,64.71
+166,"How to Cut Down on Ransomware Attacks Without Banning Bitcoin.","text166",1,0,0,0,-0.166666666666667,3.09333333333333,"negative",5.77333333333333,4.6,6,10,69.79
+167,"DC Sues Amazon, Accusing It of Abusing Its Monopoly.","text167",2,1,0,0,-0.166666666666667,2.92,"negative",5.6275,4.655,6,9,53.88
+168,"Man accused of robbing 23 banks in Arizona, Nevada arrested.","text168",2,0,0,0,-0.285714285714286,3.706,"negative",5.254,4.18,7,10,61.33
+169,"Board of Energy's CEO warns he is 'very alarmed' about economy.","text169",2,0,0,0,-0.333333333333333,5.1925,"neutral",4.935,5.3325,6,11,77.23
+170,"Board of Energy's CEO warns he is 'very panicky' about economy.","text170",1,0,0,0,-0.166666666666667,4.922,"neutral",5.348,5.092,6,11,68.77
+171,"US threatens foreign politicians with sanctions over crisis.","text171",2,0,0,0,-0.333333333333333,3.438,"negative",5.374,4.218,6,8,63.36
+172,"Fareportal Sues JetBlue Over Anti-Consumer Issues.","text172",0,0,0,0,0,3.065,"negative",5.35,5.525,4,6,14.63
+173,"Fed will not raise rates on inflation fears, Powell says.","text173",1,0,0,0,-0.142857142857143,3.77,"negative",5.16,4.752,7,10,86.71
+174,"Former billionaire suing Montana over forced bankruptcy.","text174",2,0,0,0,-0.333333333333333,3.7175,"negative",5.91,4.8675,6,7,30.53
+175,"A former CEO was charged with fraud, embezzlement, theft, and assault.","text175",4,0,0,0,-0.571428571428571,2.852,"negative",5.214,4.05,7,11,68.77
+176,"FTSE 100 slips as slowdown worries, inflation fears persist.","text176",2,0,0,0,-0.285714285714286,3.402,"negative",5.062,4.148,7,9,62.34
+177,"Goldman Sachs, JPMorgan warn of Evergrande's debt woes spillover risks.","text177",5,0,0,0,-0.555555555555556,3.85,"negative",5.43,4.1975,9,10,69.79
+178,"Inflation a worry for most economies, but not this one.","text178",1,0,0,0,-0.25,3.14,"negative",5.87,3.9425,4,10,86.71
+179,"Investors are starting to worry about the threat to the economy.","text179",2,0,0,0,-0.4,4.04,"neutral",5.284,4.438,5,11,68.77
+180,"Is the economy really worse off than in April 2020.","text180",1,0,0,0,-0.25,3.64,"negative",5.32,4.16,4,10,78.25
+181,"It's Not You -- Facebook, WhatsApp and Instagram Are Failing Worldwide.","text181",1,0,0,0,-0.2,2.33,"negative",5.5,4.74,5,10,61.33
+182,"Executive Officer Warns of Potentially Catastrophic US Default as Debt Battle Drags On.","text182",6,0,0,0,-0.6,3.765,"negative",5.145,4.55875,"10",13,24.44
+183,"Judge threatens arrests for PPP 'fraudsters' in Singaporean hotel bankruptcy.","text183",3,0,0,0,-0.375,3.588,"negative",5.47,3.816,8,10,35.95
+184,"Crisis Escalates: On debt limits, no news is bad news for now.","text184",4,0,0,0,-0.571428571428571,4.19142857142857,"neutral",5.41428571428571,4.79,7,12,84.68
+185,"How the Debt Limit Turned into an alarming Doomsday Cult.","text185",5,0,0,0,-0.833333333333333,3.50333333333333,"negative",5.31666666666667,4.10333333333333,6,10,78.25
+186,"Our $29 Billion Deficit, Fiscal Turmoil , Inflation Scares, And Debt.","text186",4,0,0,0,-0.571428571428571,3.73142857142857,"negative",5.22857142857143,4.53714285714286,7,10,69.79
+187,"Partisan fight looms as economists warn US could hit debt limit soon.","text187",5,0,0,0,-0.454545454545455,3.96833333333333,"negative",5.055,4.69,"11",12,76.22
+188,"Investigation On Twitter CEO Jack Dorsey's Hyperinflation Warning.","text188",1,0,0,0,-0.142857142857143,3.92,"negative",5.975,6.29,7,8,4.14
+189,"Debt and billions in spending: America's struggling workforce.","text189",2,0,0,0,-0.333333333333333,3.91666666666667,"negative",5.75666666666667,4.62666666666667,6,8,37.98
+190,"Senate evades US debt disaster, voting to increase borrowing.","text190",3,0,0,0,-0.375,3.78833333333333,"negative",5.32166666666667,4.83833333333333,8,9,45.42
+191,"Crises collide: Homeless in America when climate disaster strikes.","text191",2,0,0,0,-0.285714285714286,2.98833333333333,"negative",5.13666666666667,3.625,7,9,45.42
+192,"Stranger Danger: How to Combat Overcoming Distrust.","text192",4,0,0,0,-0.8,3.892,"negative",5.506,4.424,5,7,55.91
+193,"Temasek, DBS to launch $500 million debt financing platform.","text193",1,0,0,0,-0.142857142857143,5.225,"neutral",5.1875,5.675,7,9,79.26
+194,"Evergrande Denies News on Bankruptcy As Crisis Boils Over.","text194",3,0,0,0,-0.5,3.564,"negative",5.468,4.25,6,9,53.88
+195,"US aims to recoup nearly $8 billion of its financial crisis debt.","text195",2,0,0,0,-0.25,4.35,"neutral",5.242,5.06,8,12,67.76
+196,"What America's Startup Boom Could Mean For The Economy.","text196",0,0,0,0,0,3.60333333333333,"negative",5.23333333333333,4.49,6,9,53.88
+197,"What do Senators want on the economy; they have no idea anymore.","text197",0,0,0,0,0,4.276,"neutral",4.72,4.726,5,12,76.22
+198,"Why a 401(k) Rollover to an IRA Could Be a Horrifying Mistake.","text198",2,0,0,0,-0.333333333333333,2.785,"negative",5.61,4.325,6,12,84.68
+199,"Why October 19 could be a catastrophic day for the US economy.","text199",1,0,0,0,-0.166666666666667,4.01666666666667,"neutral",5.06333333333333,4.01,6,12,59.3
+200,"Wildfire smoke's economic damage lingers after the flames.","text200",1,0,0,0,-0.166666666666667,4.09,"neutral",5.005,4.18833333333333,6,8,63.36
+201,"World shares jolted by money crisis as debt payment fails.","text201",3,0,0,0,-0.375,4.4625,"neutral",5.425,5.00625,8,10,78.25
+202,"If Rush Hour Dies, Does Mass Transit Economy Die With It.","text202",2,0,0,0,-0.285714285714286,3.67857142857143,"negative",5.23714285714286,4.99285714285714,7,11,85.69
+203,"Economists warn of October debt cliff and its 'irreparable damage'.","text203",0,1,0,0,0.142857142857143,3.73,"negative",5.134,4.006,7,10,52.87
