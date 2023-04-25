@@ -1,10 +1,42 @@
 # How To Score Headlines
 
+## Making Economic News Headlines
+
+- Take the anew dictionary `english_shortened.csv` and filter to make four cells
+	- Negative Valence Low Arousal (NLA)
+		- Filter ANEW Valence < 4, arousal < 4
+		- 581 word list
+	- Negative Valence High Arousal (NHA)
+		- Filter ANEW Valence < 4, arousal > 5
+		- 1017 word list
+	- Positve Valence Low Arousal (PLA)
+		- Filter ANEW Valence > 5.5, arousal < 3.5
+		- 1272 word list
+	- Positive Valence High Arousal (PHA)
+		- Filter ANEW Valence > 5.5, arousal > 5.5
+		- 454 word list
+- Generate Headlines:
+	- Make a new ChatGPT session
+	- PROMPT: I have a list of words: <paste list directly from list>
+	- PROMPT: I want you to make 50 economic news headlines. The headlines must include multiple words from that long list of words
+	- Repeate second prompt until 300 headlines are created that do not include Covid/Pandemic/Biden/Trump. USE THIS PROMPT:
+	- PROMPT: I want you to make 50 more economic news headlines. The headlines must include multiple words from that long list of words
+- Headline output:
+	- See `chatgpt_headlines.csv` 
+	- Order in which ChatGPT created headlines (using ANEW wordlists) are scored:
+ 		- First 300 are NLA
+		- Second 300 are NHA
+		- Third 300 are PLA
+		- Fourth 300 are PHA
+- From output, select headlines for each cell based on score, and face validity. Lightly edit for clarity.
+	- See `headlines.csv`
+
+
 ## Scoring using ANEW
 ### Dependencies
 Stanford Core NLP: https://stanfordnlp.github.io/CoreNLP/
 
-- Download, unzip, and place in home directory
+- Download, unzip, and place in a directory you will remember (e.g., home directory)
 
 - Also install using python, e.g., from a terminal using
 
@@ -40,9 +72,9 @@ ANEW Scoring Code
 
 - Borrowed from: https://github.com/dwzhou/SentimentAnalysis
 
-News Headlines
+Economic News Headlines Created By ChatGPT
 
-- See `economic_news_arrticles_usa_2021_headlines_only.txt`
+- See `headlines.csv`
 
 ### Get The ANEW Code Working
 In `anew_sentiment_analysis.py`, update the nlp path to reflect where you stored the Stanford Core NLP Directory
