@@ -35,7 +35,7 @@ source(file = "LSDprep_dec2017.R")
 
 
 # Step 1: Road in the data  
-headlines = read.csv("economic_news_arrticles_usa_2021_headlines_only.csv", stringsAsFactors=FALSE, header=FALSE)
+headlines = read.csv("headlines.csv", stringsAsFactors=FALSE, header=FALSE)
 
 
 
@@ -71,7 +71,7 @@ print(preproc_headlines)
 
 
 ## Write out cleaned headlines
-write.csv(preproc_headlines,"preproc_headlines.csv", row.names = TRUE)
+write.csv(preproc_headlines,"headlines_preproc.csv", row.names = TRUE)
 
 ## Run the code to clean them in Python
 
@@ -99,4 +99,4 @@ cleaned_lexicoder_scores <- dfm(cleaned_corp_headlines, dictionary = data_dictio
 ## Convert to dataframe and export to csv
 cleaned_lexicoder_df <- convert(cleaned_lexicoder_scores, to = "data.frame")
 
-write.csv(cleaned_lexicoder_df,"cleaned_lexicoder_scores.csv", row.names = TRUE)
+write.csv(cleaned_lexicoder_df,"headlines_lexicoder_.csv", row.names = TRUE)
