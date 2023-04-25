@@ -17,7 +17,8 @@
 	- Make a new ChatGPT session
 	- PROMPT: I have a list of words: `paste list directly from list`
 	- PROMPT: I want you to make 50 economic news headlines. The headlines must include multiple words from that long list of words
-	- Repeate second prompt until 300 headlines are created that do not include Covid/Pandemic/Biden/Trump. USE THIS PROMPT:
+	- Repeate second prompt until 300 headlines are created that do not include Covid/Pandemic/Biden/Trump. 
+	- If you need to make a few more headlines after deleting based on the above criteria, USE THIS PROMPT:
 	- PROMPT: I want you to make 50 more economic news headlines. The headlines must include multiple words from that long list of words
 - Headline output:
 	- See `chatgpt_headlines.csv` 
