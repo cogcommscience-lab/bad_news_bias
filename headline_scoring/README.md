@@ -1,6 +1,4 @@
-# How To Score Headlines
-
-## Making Economic News Headlines
+# How to Make Economic News Headlines
 
 - Take the anew dictionary `english_shortened.csv` and filter to make four cells
 	- Negative Valence Low Arousal (NLA)
@@ -28,9 +26,11 @@
 		- Second 300 are NHA
 		- Third 300 are PLA
 		- Fourth 300 are PHA
-- From output, select headlines for each cell based on score, and face validity. Lightly edit for clarity.
+- Score using ANEW (see below)
+	- From output, select headlines for each cell based on score, and face validity. Lightly edit for clarity.
 	- See `headlines.csv`
 
+# How to Score Headlines
 
 ## Scoring using ANEW
 ### Dependencies
@@ -72,10 +72,6 @@ ANEW Scoring Code
 
 - Borrowed from: https://github.com/dwzhou/SentimentAnalysis
 
-Economic News Headlines Created By ChatGPT
-
-- See `headlines.csv`
-
 ### Get The ANEW Code Working
 In `anew_sentiment_analysis.py`, update the nlp path to reflect where you stored the Stanford Core NLP Directory
 
@@ -83,18 +79,17 @@ In `anew_sentiment_analysis.py`, update the anew path to reflect where you store
 
 Important:
 
-- News headlines should be a `.txt` file where each row encodes one headline
+- News headlines should be a `.txt` or `.csv` file where each row encodes one headline
 - The code works at the sentence level, and sentences are determined by a "." "!" "?"
 - So, if a headline includes two sentences split by a "." "!" or "?", each sentence will get its own score
 - Alternatively, headlines will be grouped together into one long sentence until a "." is found.
-- Therefore, be careful to make sure each headline has only one "." at the very end of the headline and no other punctuation.
-- Delete all other instances of "?" and "!"
-- Remeber to use the raw `economic_news_arrticles_usa_2021_headlines.csv` file for empirical testing; it includes punctuation
+- Therefore, be careful to make sure each headline has only one ".", "?", or "!" mark  at the very end of the headline and nowhere else.
+- Remeber to use the raw `headlines.csv` file for empirical testing; it includes punctuation
 
 ### Run the ANEW code
-	$ python anew_sentiment_analysis.py --dir /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --file /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_news_arrticles_usa_2021_headlines_only.txt --out /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --mode mean
+	$ python anew_sentiment_analysis.py --dir /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --file /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/headlines.csv --out /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --mode mean
 
-This will take... a while
+This will take a moment to run. This code is not efficient.
 
 ## Scoring Using Lexicoder
 ### Dependencies
@@ -111,12 +106,14 @@ Lexicoder preprocessing script
 
 Raw data
 
-- `economic_news_arrticles_usa_2021_headlines_only_with_head.csv`
+- `headlines.csv`
 
 ### Run the Lexicoder Code
 See comments in `lexicoder_sentiment_analysis.R`
 
-Note... step3 requires an ugly hack: export csv, restructure w/ restructure.py, load back to R
+Note... step3 requires an ugly hack: export csv, restructure w/ `restructure.py`, load back to R
+
+Before running `restructure.py` notice the first and last headline in your output file `headlines_preproc.csv`. You will need to update lines 10 and 11 in `restructure.py` with those headlines. Also, be sure to update the output path (line14).
 
 ## Scoring Flesch Reading Ease and Word Count
 
@@ -132,10 +129,6 @@ textstat
 
 	`$ pip install textstat`
 
-## Preprocessing Notes
-When scoring using Lexicoder, the pre-processing steps break raw headline 6023 into two headlines. In the raw lexicoder output, these are text6023 and text6024. Text6023 was manually deleted from the lexicoder deleted since it is just ` Condor Gold Plc ( \ "" Condor Gold\ ` and text6024 is retained as it is `  Condor\ "" or the \ "" Company\ "" ) Exercise of Warrants and Receipt of £25 , 833 . `. This information doesn't really matter, unless you want to do convergent validity analyses between the ANEW and lexicoder dictionaries. At which point, each score vector needs to be of the same length with each row belonging to the same document. Deleting text6023 from the lexicoder output makes this possible.
-
-
 ## Checking Convergent Validity
 
 Convergent validity code
@@ -144,15 +137,23 @@ Convergent validity code
 
 Convergent validity data
 
-- `convergent_validity_data.csv`
+- `headlines_convergent_validity.csv`
 
-This code looks at the relationship between automated text features
+This code looks at the relationship between automated text features. Summary statistics:
+
+- ANEW Valence Scores:
+	- 109 headlines < scale midpoint of 5
+	- 99 headlines > scale midpoint of 5
+- ANEW Arousal Scores:
+	- 112 headlines < scale midpoint of 5
+	- 96 headlines > scale midpoint of 5
+- ANEW valence and lexicoder net tone are highly correlated (r = .86). This is good evidence of convergent validity between the two measures of valence.
+- ANEW Valence and ANEW arousal are not correlated (r = -.15, n.s. with a corrected p < .01 criterion). This is what we want, since our manipulation treats arousal and valence as orthogonal.
+- ANEW Valence and ANEW arousal are not correlated with word count. This is great, it suggests that number of words is not driving the score.
+- ANEW arousal is slightly correlated with flesch score (r = -.24). This is not perfect because it suggests that increased word complexity is associated with decreased headline arousal. But it is tolerable since the bag-of-words ANEW disctionary is noisy on short texts, as is the Flesch score. 
+- Flesch score and word count are correlated (you'd expect this, given how each is calculated, this should be OK)
+- Average ANEW valence is slightly higher (M = 4.99) than average ANEW arousal (M = 4.62; t(367) = 4.53, p < .001)
+- THESE ARE ALL OBSERVATIONS ON THE CHATGPT GENERATED HEADLINES THAT WERE SCORED USING AUTOMATED ROUTINES. ADDITIONAL STATISTICS EXIST FOR THE HUMAN ANNOTATIONS, AND THESE ANNOTATIONS GUIDE OUR MANIPULATION.
 
 ## Scoring With Human Annotators
-Headlines were manually inspected and an initial n=250 were selected for further evaluation (see `anew_lexi_convergent_validity_subsample.csv`. These headlines were slightly edited for clarity and rescored using ANEW and Lexicoder. Results showed high correlations between arousal/valence, and arousal/valence/wordcount. 
-
-From, 200 headlines were selected and slightly edited for clarity, and in an attempt to destroy correlations between arousal and valence. Edited headlines were rescored using ANEW and Lexicoder (see `anew_lexi_convergent_validity_subsample_second_pass.csv`). The updated headlines exist in the `subsample_for_human_annotation` directory. Headlines split naturally into four cells (arousal high/low; valence high/low) based on dictionary-based scoring (ANEW, Lexicoder).
-
-The second pass file had a problem in that only 40 had an ANEW arousal score greater than the scale midpoint (5). A third round of editing was completed and the revised headlines rescored (`anew_lexi_convergent_validity_subsample_third_pass.csv`). These split very cleanly into four cells, and are orthogonal in terms of arousal and valence. These were the final headlines used in the human annotation cross validation study.
-
-The third_pass headlines were then used to human annotation rating (using the SAM scale).
+These headlines were manually inspected and an initial subsample were selected for further evaluation.
