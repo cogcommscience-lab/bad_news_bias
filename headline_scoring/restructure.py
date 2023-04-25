@@ -1,5 +1,5 @@
 import pandas as pd
-with open('/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_preproc_headlines.csv') as f:
+with open('/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/headlines_preproc.csv') as f:
     lines = f.readlines()
 
 text = lines[1]
@@ -7,8 +7,8 @@ text = lines[1]
 text = text.split('"" , ""')
 
 headline_df = pd.DataFrame({"headlines": text})
-headline_df.headlines.iloc[0] =  ' Covid - 19 vaccine is safe for those with food and drug allergies , allergist group says . '
-headline_df.headlines.iloc[-1] = ' The Tiwa Select Founder\'s Perfect Friday to Tuesday in Mexico City .'
+headline_df.headlines.iloc[0] =  ' Government Bailouts Leave Taxpayers Burdened with Alimony . '
+headline_df.headlines.iloc[-1] = ' The rise in Interest in Intimate Lifestyle Products Incites Advancement in Reality TV . '
 
 
-headline_df.to_csv("/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/economic_headlines_structured.csv")
+headline_df.to_csv("/home/rwhuskey/github_repos/bad_news_bias/headline_scoring/headlines_structured.csv")
