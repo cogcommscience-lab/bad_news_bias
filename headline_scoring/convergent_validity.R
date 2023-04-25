@@ -6,6 +6,7 @@
   # Step 1: Read in the data
   # Step 2: Check Correlations between Automated Valence Scores
   # Step 3: Plot A Correlation Matrix For All Automatically Scored Text Features
+  # Step 4: Make Boxplots for ANEW Arousal and Valence
 
 ## Note: For Lexicoder, following Young & Soroka, 2012 (https://doi.org/10.1080/10584609.2012.671234)
 ## lexicoder_net_tone = (# lexi_positive/num_words_ex_stopwords) - (# lexi_neg/num_words_ex_stopwords)
@@ -15,17 +16,21 @@
 # Dependencies
   # tidyverse
   # corrplot
+  # ggplot2
+  # tidyr
 
 
 
 # Step 0: Load packages
 library(tidyverse)
 library(corrplot)
+library(ggplot2)
+library(tidyr)
 
 
 
 # Step 1: Read in the data
-scores = read.csv("subsample_for_human_annotation/anew_lexi_convergent_validity_subsample_third_pass.csv", stringsAsFactors=FALSE)
+scores = read.csv("headlines_convergent_validity.csv", stringsAsFactors=FALSE)
 
 
 
@@ -91,3 +96,32 @@ corrplot(M, method="color", col=col(200),
          diag=FALSE,
          mar=c(0,0,1,0)
 )
+
+
+# Step 4: Make Boxplots for ANEW Arousal and Valence
+
+# Reshape the data from wide to long format
+scores_long <- tidyr::gather(scores, key = "variable", value = "value", anew_valence, anew_arousal)
+
+# Create a combined boxplot for anew_valence and anew_arousal
+ggplot(scores_long, aes(x = variable, fill = variable, y = value)) +
+  geom_boxplot() +
+  scale_fill_manual(values = c("lightblue", "lightgreen"), 
+                    labels = c("ANew Valence", "ANew Arousal")) +
+  labs(x = "", y = "ANEW Score") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+# Perform a two-sample t-test
+ttest <- t.test(scores$anew_valence, scores$anew_arousal)
+
+# Print the results of the t-test
+print(ttest)
+
+# Calculate the mean for anew_valence and anew_arousal
+valence_mean <- mean(scores$anew_valence)
+arousal_mean <- mean(scores$anew_arousal)
+
+# Print the mean values
+cat("Mean for anew_valence:", valence_mean, "\n")
+cat("Mean for anew_arousal:", arousal_mean, "\n")
