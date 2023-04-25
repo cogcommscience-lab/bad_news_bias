@@ -15,7 +15,7 @@
 		- 454 word list
 - Generate Headlines:
 	- Make a new ChatGPT session
-	- PROMPT: I have a list of words: <paste list directly from list>
+	- PROMPT: I have a list of words: `paste list directly from list`
 	- PROMPT: I want you to make 50 economic news headlines. The headlines must include multiple words from that long list of words
 	- Repeate second prompt until 300 headlines are created that do not include Covid/Pandemic/Biden/Trump. USE THIS PROMPT:
 	- PROMPT: I want you to make 50 more economic news headlines. The headlines must include multiple words from that long list of words
