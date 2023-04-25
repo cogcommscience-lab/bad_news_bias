@@ -1,6 +1,6 @@
 # How to Make Economic News Headlines
 
-- Take the anew dictionary `english_shortened.csv` and filter to make four cells
+- Take the anew dictionary `english_shortened.csv` and filter* to make four cells
 	- Negative Valence Low Arousal (NLA)
 		- Filter ANEW Valence < 4, arousal < 4
 		- 581 word list
@@ -29,6 +29,8 @@
 - Score using ANEW (see below)
 	- From output, select headlines for each cell based on score, and face validity. Lightly edit for clarity.
 	- See `headlines.csv`
+
+*NB: Filtering thresholds are somewhat arbitrary, with the main goal of creating suitably long lists. Applying a similar thresholding logic resulted in lists of vastly different lengths. The main goal is to create a lists of words for headline generation, and then score those headlines using automated and human self-report approaches (which will give us some insight into the validity of the headline manipulations.
 
 # How to Score Headlines
 
