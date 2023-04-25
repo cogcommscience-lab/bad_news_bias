@@ -90,6 +90,8 @@ Important:
 - Remeber to use the raw `headlines.csv` file for empirical testing; it includes punctuation
 
 ### Run the ANEW code
+Update paths as needed.
+
 	$ python anew_sentiment_analysis.py --dir /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --file /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/headlines.csv --out /home/rwhuskey/github_repos/bad_news_bias/headline_scoring/ --mode mean
 
 This will take a moment to run. This code is not efficient.
