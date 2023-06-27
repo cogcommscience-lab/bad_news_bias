@@ -28,10 +28,11 @@
 		- Third 300 are PLA
 		- Fourth 300 are PHA
 - Score using ANEW (see below)
-	- From output, select headlines for each cell based on score, and face validity. Lightly edit for clarity.
-	- See `headlines.csv`
+	- Scoring via ANEW yields `headlines_anew.csv`
+	- From `headlines_anew.csv`, select headlines for each cell based on score, and face validity. Lightly edit for clarity.
+	- See selected and lightly edited headlines in `headlines.csv`
 
-*NB: Filtering thresholds are somewhat arbitrary, with the main goal of creating suitably long lists. Applying a similar thresholding logic resulted in lists of vastly different lengths. The main goal is to create a lists of words for headline generation, and then score those headlines using automated and human self-report approaches (which will give us some insight into the validity of the headline manipulations).
+*NB: Filtering thresholds are somewhat arbitrary, with the main goal of creating suitably long lists. Applying identical thresholding logic to all four cells resulted in lists of vastly different lengths. The main goal is to create a lists of words for headline generation, and then score those headlines using automated and human self-report approaches (which will give us some insight into the validity of the headline manipulations).
 
 # How to Score Headlines
 
@@ -67,7 +68,7 @@ After installing, open Python in a terminal and install stopwords and punkt word
 
 ANEW Dictionary
 
-- See english_shortened.csv
+- See `english_shortened.csv`
 
 ANEW Scoring Code
 
@@ -158,7 +159,43 @@ This code looks at the relationship between automated text features. Summary sta
 - ANEW arousal is slightly correlated with flesch score (r = -.24). This is not perfect because it suggests that increased word complexity is associated with decreased headline arousal. But it is tolerable since the bag-of-words ANEW disctionary is noisy on short texts, as is the Flesch score. 
 - Flesch score and word count are correlated (you'd expect this, given how each is calculated, this should be OK)
 - Average ANEW valence is slightly higher (M = 4.99) than average ANEW arousal (M = 4.62; t(367) = 4.53, p < .001)
-- THESE ARE ALL OBSERVATIONS ON THE CHATGPT GENERATED HEADLINES THAT WERE SCORED USING AUTOMATED ROUTINES. ADDITIONAL STATISTICS EXIST FOR THE HUMAN ANNOTATIONS, AND THESE ANNOTATIONS GUIDE OUR MANIPULATION.
+- These are observations on ChatGPT generated headlines that were subsequently scored using a dictionary-based approach. The main goal was to select headlines for subsequent human annotation and cross validation (below)
 
 ## Scoring With Human Annotators
-These headlines were manually inspected and an initial subsample were selected for further evaluation.
+The headlines in `headlines_convergent_validity.csv` were then evaluated using human annotators on MTurk (n=xxx). Each headline received an average of 29.3 ratings (range = 25 - 32). Headlines were scored on arousal/valence/dominance using the SAM. Headlines were also scored on comprehension, liking, familiarity, and seen before (see `mturk_merged_data.xlsx`).
+
+A cross-validation analysis* was then conducted (`circumplex_plot.R`) to examine the relationship between dictionary (Anew/Lexicoder) and human annotations (MTurk using SAM). Relationships between variables of no interest were also examined. The code selects (`testing_headlines.csv`) the top highest/lowest scoringheadlines (14 per cell, 56 total) based on human annotation (for results see circumplex plot below). The correlation between human and dictionary annotation was high. In instance of disagreement, human annotators "won". Summary statistics (correlation matrix was Bonferroni corrected for multiple comparisons, p < .00059):
+
+- Good News:
+	- SAM valence (V_Mean) is uncorrelated with self-reported arousal (A_Mean) and dominance (D_Mean)
+	- SAM valence is correlated with ANEW valence (r = .85) and netlexitone (r = .81)
+	- SAM arousal (A_Mean) is correlated with ANEW arousal (r = .41)
+	- Flesch score is uncorrelated with SAM valence, SAM arousal, SAM dominance, comprehension (C_Mean), familiarity (F_Mean), seen before (S_Mean)
+	- Wordcount is uncorrelated with SAM valence, SAM arousal, SAM dominance, comprehension, familiarity, seen before
+- Items to note:
+	- SAM valence is strongly correlated with liking (r = .87). Our DDM hypothesis is opposite, so this works against us.
+	- SAM arousal is correlated with comprehension (r = .39), familiarity (r = .41) and seen before (r = .27). Not perfect, but these are ChatGPT generated headlines.
+	- As is commonly observed elsewhere in the literature, SAM dominance is correlated with SAM arousal (r = .83)
+
+A series of ANOVA models were also fit to examine the cells in aggregate by valence and arousal:
+- sam_valence ~ sam_cells(nla, nha, pla, pha)
+	- F(3, 52) = 708, p < .001
+	- All pairwise comparisons are significantly different, after Bonferroni correction, p < .001
+	- Ideally, cells would be invariant within valence level (i.e., nla vs. nha = n.s., pla vs. pha = n.s.). Still, this is tolerable
+- sam_arousal ~ sam_cells(nla, nha, pla, pha)
+	- F(3, 52) = 180.2, p < .001
+	- All pairwise comparisons are significantly different, after bonferroni correction, p < .001
+	- Similar concerns to the SAM valence model
+
+The FINAL headlines used for DDM testing are in `testing_headlines.csv`.
+
+*Note, all these analyses are on averaged human annotation data and each human annotator rated multiple headlines (there is some dependency in the data). Still, this evidence all indicates that we have headlines that systematically vary on arousal and valence and are largely uncorrelated with other factors that might influence the DDM result (e.g., word count, reading ease).
+
+Circumplex plot showing ANEW labels (color) and SAM ratings (point estimates and uncertainty). Results show good (but not perfect) agreement between ANEW and SAM.
+![Circumplex plot for 56 news headlines based on ANEW ratings](https://github.com/cogcommscience-lab/bad_news_bias/blob/main/headline_scoring/anew_sam_circumplex.png?raw=true)
+
+Circumplex plot showing SAM labels (color) and SAM ratings (point estimates and uncertainty). Results show strong distinction betwee valence (high/low) and slightly weaker distinction between arousal (high/low). All cell levels are above/below the scale mean.
+![Circumplex plot for 56 news headlines based on SAM ratings](https://github.com/cogcommscience-lab/bad_news_bias/blob/main/headline_scoring/sam_sam_circumplex.png?raw=true)
+
+Correlation matrix showing significant relationships between variables. N.S. correlations are not shown.
+![Correlation matrix showing relationships between variables](https://github.com/cogcommscience-lab/bad_news_bias/blob/main/headline_scoring/cormatrix.png?raw=true)
