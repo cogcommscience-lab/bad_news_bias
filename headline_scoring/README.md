@@ -162,7 +162,7 @@ This code looks at the relationship between automated text features. Summary sta
 - These are observations on ChatGPT generated headlines that were subsequently scored using a dictionary-based approach. The main goal was to select headlines for subsequent human annotation and cross validation (below)
 
 ## Scoring With Human Annotators
-The headlines in `headlines_convergent_validity.csv` were then evaluated using human annotators on MTurk (n=xxx). Each headline received an average of 29.3 ratings (range = 25 - 32). Headlines were scored on arousal/valence/dominance using the SAM. Headlines were also scored on comprehension, liking, familiarity, and seen before (see `mturk_merged_data.xlsx`).
+The headlines in `headlines_convergent_validity.csv` were then evaluated using human annotators on Prolific Academic (n=305). The survey files are in the `qualtrics` directory.  Each headline received an average of 29.3 ratings (range = 25 - 32). Headlines were scored on arousal/valence/dominance using the SAM. Headlines were also scored on comprehension, liking, familiarity, and seen before (see `prolific_merged_data.xlsx`).
 
 A cross-validation analysis* was then conducted (`circumplex_plot.R`) to examine the relationship between dictionary (Anew/Lexicoder) and human annotations (MTurk using SAM). Relationships between variables of no interest were also examined. The code selects (`testing_headlines.csv`) the top highest/lowest scoringheadlines (14 per cell, 56 total) based on human annotation (for results see circumplex plot below). The correlation between human and dictionary annotation was high. In instance of disagreement, human annotators "won". Summary statistics (correlation matrix was Bonferroni corrected for multiple comparisons, p < .00059):
 
