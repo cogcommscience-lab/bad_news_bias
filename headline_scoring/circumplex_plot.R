@@ -8,7 +8,7 @@ library(readxl)
 # Read In Data
 #df <- read_dta('News Bias Long w anew.dta')
 
-df <- read_excel("mturk_merged_data.xlsx")
+df <- read_excel("prolific_merged_data.xlsx")
 
 # Create anew_valence_label variable
 df$anew_valence_label <- ifelse(df$anew_valence <= 5, "negative_valence", "positive_valence")
