@@ -47,16 +47,45 @@ library(ggplot2)
 library(viridis)
 
 # Make a circumplex plot
-ggplot(means_df, aes(x = mean_valence, y = mean_arousal, color = anew_scores)) +
+# internal keys (from interaction) -> colors
+key_vals <- c(
+  "low_arousal, negative_valence"  = "#7f3b08",
+  "low_arousal, positive_valence"  = "#fdb863",
+  "high_arousal, negative_valence" = "#b2abd2",
+  "high_arousal, positive_valence" = "#2d004b"
+)
+
+# pretty legend labels
+label_map <- c(
+  "low_arousal, negative_valence"  = "Negative Valence Low Arousal",
+  "low_arousal, positive_valence"  = "Positive Valence Low Arousal",
+  "high_arousal, negative_valence" = "Negative Valence High Arousal",
+  "high_arousal, positive_valence" = "Positive Valence High Arousal"
+)
+
+# plot
+ggplot(
+  means_df,
+  aes(
+    x = mean_valence,
+    y = mean_arousal,
+    color = interaction(anew_arousal_label, anew_valence_label, sep = ", ")
+  )
+) +
   geom_point(size = 3) +
   geom_errorbar(aes(ymin = mean_arousal - ci_arousal, ymax = mean_arousal + ci_arousal), width = 0.2) +
   geom_errorbarh(aes(xmin = mean_valence - ci_valence, xmax = mean_valence + ci_valence), height = 0.2) +
   labs(x = "SAM Valence", y = "SAM Arousal", color = "ANEW Labels") +
   theme_classic() +
-  scale_color_viridis_d() +
-  theme(legend.position = "bottom",
-        legend.box = "horizontal") +
+  scale_color_manual(
+    values = key_vals,
+    breaks = names(label_map),   # ensure legend order
+    labels = label_map,
+    drop = FALSE                 # keep all four in legend even if absent
+  ) +
+  theme(legend.position = "bottom", legend.box = "horizontal") +
   guides(color = guide_legend(nrow = 2))
+
 
 # Lets select the top/bottom 20 headlines on arousal/valence
 
@@ -107,6 +136,7 @@ cells_combo$sam_valence_label <- ifelse(cells_combo$mean_valence <= 5, "Negative
 cells_combo$sam_valence_label_short <- ifelse(cells_combo$mean_valence <= 5, "N", "P")
 cells_combo$sam_arousal_label <- ifelse(cells_combo$mean_arousal <= 5, "Low Arousal", "High Arousal")
 cells_combo$sam_arousal_label_short <- ifelse(cells_combo$mean_arousal <= 5, "LA", "HA")
+
 # Concatenate "anew_valence_label" and "anew_arousal_label"
 cells_combo$sam_scores <- paste(cells_combo$sam_valence_label, cells_combo$sam_arousal_label, sep = " ")
 cells_combo$sam_scores_short <- paste(cells_combo$sam_valence_label_short, cells_combo$sam_arousal_label_short, sep = "")
@@ -116,30 +146,116 @@ write.csv(cells_combo,"testing_headlines.csv", row.names = TRUE)
 
 # Now lets make a circumplex plot for cells_combo
 # This plot labels each data point using the ANEW values
-ggplot(cells_combo, aes(x = mean_valence, y = mean_arousal, color = anew_scores)) +
+anew_circumplex_plot <- ggplot(
+  cells_combo,
+  aes(
+    x = mean_valence,
+    y = mean_arousal,
+    color = interaction(anew_arousal_label, anew_valence_label, sep = ", ")
+  )
+) +
   geom_point(size = 3) +
   geom_errorbar(aes(ymin = mean_arousal - ci_arousal, ymax = mean_arousal + ci_arousal), width = 0.2) +
   geom_errorbarh(aes(xmin = mean_valence - ci_valence, xmax = mean_valence + ci_valence), height = 0.2) +
   labs(x = "SAM Valence", y = "SAM Arousal", color = "ANEW Labels") +
   theme_classic() +
-  scale_color_viridis_d() +
-  theme(legend.position = "bottom",
-        legend.box = "horizontal") +
+  scale_color_manual(
+    values = key_vals,
+    breaks = names(label_map),  # keep legend order consistent
+    labels = label_map,
+    drop = FALSE                # show all four in legend even if absent
+  ) +
+  scale_x_continuous(limits = c(1, 9), breaks = 1:9) +
+  scale_y_continuous(limits = c(1, 9), breaks = 1:9) +
+  theme(
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.text = element_text(size = 15),   # legend entries
+    legend.title = element_text(size = 17),  # legend title
+    axis.title = element_text(size = 17),    # axis labels
+    axis.text = element_text(size = 15)      # axis tick labels
+  ) +
   guides(color = guide_legend(nrow = 2))
+
+plot(anew_circumplex_plot)
+
+# Save as PNG
+ggsave(
+  filename = "anew_sam_circumplex.png",
+  plot = anew_circumplex_plot,
+  width = 8.5,
+  height = 8.5,
+  units = "in",
+  dpi = 300
+)
+
+# Save as EPS
+ggsave(
+  filename = "anew_sam_circumplex.eps",
+  plot = anew_circumplex_plot,
+  width = 8.5,
+  height = 8.5,
+  units = "in",
+  dpi = 300,
+  device = cairo_ps   # ensures high-quality EPS export
+)
 
 
 # Now lets make a circumplex plot for cells_combo
 # This plot labels each data point using the SAM values
-ggplot(cells_combo, aes(x = mean_valence, y = mean_arousal, color = sam_scores)) +
+sam_key_vals <- c(
+  "Negative Valence Low Arousal"  = "#7f3b08",
+  "Positive Valence Low Arousal"  = "#fdb863",
+  "Negative Valence High Arousal" = "#b2abd2",
+  "Positive Valence High Arousal" = "#2d004b"
+)
+
+sam_circumplex_plot <- ggplot(cells_combo, aes(x = mean_valence, y = mean_arousal, color = sam_scores)) +
   geom_point(size = 3) +
   geom_errorbar(aes(ymin = mean_arousal - ci_arousal, ymax = mean_arousal + ci_arousal), width = 0.2) +
   geom_errorbarh(aes(xmin = mean_valence - ci_valence, xmax = mean_valence + ci_valence), height = 0.2) +
   labs(x = "SAM Valence", y = "SAM Arousal", color = "SAM Labels") +
   theme_classic() +
-  scale_color_viridis_d() +
-  theme(legend.position = "bottom",
-        legend.box = "horizontal") +
+  scale_color_manual(
+    values = sam_key_vals,
+    breaks = names(sam_key_vals),
+    drop = FALSE
+  ) +
+  scale_x_continuous(limits = c(1, 9), breaks = 1:9) +
+  scale_y_continuous(limits = c(1, 9), breaks = 1:9) +
+  theme(
+    legend.position = "bottom",
+    legend.box = "horizontal",
+    legend.text = element_text(size = 15),   # legend entries
+    legend.title = element_text(size = 17),  # legend title
+    axis.title = element_text(size = 17),    # axis labels
+    axis.text = element_text(size = 15)      # axis tick labels
+  ) +
   guides(color = guide_legend(nrow = 2))
+
+plot(sam_circumplex_plot)
+
+# Save as PNG
+ggsave(
+  filename = "sam_sam_circumplex.png",
+  plot = sam_circumplex_plot,
+  width = 8.5,
+  height = 8.5,
+  units = "in",
+  dpi = 300
+)
+
+# Save as EPS
+ggsave(
+  filename = "sam_sam_circumplex.eps",
+  plot = sam_circumplex_plot,
+  width = 8.5,
+  height = 8.5,
+  units = "in",
+  dpi = 300,
+  device = cairo_ps   # ensures high-quality EPS export
+)
+
 
 # Look at correlation between ANEW and self-reports
 corrmatrix <- df[,c(3,7,11,15,19,23,27,37,38,40,41,42,43,44)]
@@ -173,21 +289,65 @@ head(p.mat[, 1:7])
 
 library(corrplot)
 
+# Mapping from original variable names to human-readable names
+var_labels <- c(
+  "V_Mean"                = "SAM Valence",
+  "L_Mean"                = "Liking",
+  "net_lexi_tone"         = "Lexicoder Net Tone",
+  "anew_valence"          = "ANEW Valence",
+  "anew_dominance"        = "ANEW Dominance",
+  "flesch_score"          = "Flesch Reading Ease",
+  "num_words_ex_stopwords"= "Number of Words Excluding Stopwords",
+  "num_words_inc_stopwords"= "Number of Words Including Stopwords",
+  "anew_arousal"          = "ANEW Arousal",
+  "A_Mean"                = "SAM Arousal",
+  "D_Mean"                = "SAM Dominance",
+  "C_Mean"                = "Comprehension",
+  "F_Mean"                = "Familiarity",
+  "S_Mean"                = "Seen Before"
+)
+
+# Apply new labels to correlation matrix and p-value matrix
+rownames(M) <- var_labels[rownames(M)]
+colnames(M) <- var_labels[colnames(M)]
+rownames(p.mat) <- var_labels[rownames(p.mat)]
+colnames(p.mat) <- var_labels[colnames(p.mat)]
+
 ## Plot a big matrix
 ## Only results significant at p < .00059 are displayed (Bonferroni correction)
-col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
-title <- "Significant (p < .00059) Correlations For Automated Textual Analysis & Self-Report Data"
+col <- colorRampPalette(c("#7f3b08", "#fdb863", "#f7f7f7", "#b2abd2", "#2d004b"))
+title <- "Bonferroni Corrected (p < .00059) Correlations For Automated Textual Analysis & Self-Report Data"
+
+# Save as PNG
+png("cormatrix.png", width = 12, height = 12, units = "in", res = 300)
 corrplot(M, method="color", col=col(200),  
          type="upper", order="hclust", 
          title=title,
-         addCoef.col = "black", # Add coefficient of correlation
-         tl.col="black", tl.srt=45, #Text label color and rotation
-         # Combine with significance
+         addCoef.col = "black",
+         tl.col="black", tl.srt=45,
          p.mat = p.mat, sig.level = 0.00059, insig = "blank", 
-         # hide correlation coefficient on the principal diagonal
          diag=FALSE,
-         mar=c(0,0,1,0)
-)
+         mar=c(0,0,1,0))
+dev.off()
+
+# Save as EPS
+setEPS()
+postscript("cormatrix.eps", width = 12, height = 12, horizontal = FALSE,
+           onefile = FALSE, paper = "special")
+corrplot(M, method="color", col=col(200),  
+         type="upper", order="hclust", 
+         title=title,
+         addCoef.col = "black",
+         tl.col="black", tl.srt=45,
+         p.mat = p.mat, sig.level = 0.00059, insig = "blank", 
+         diag=FALSE,
+         mar=c(0,0,1,0))
+dev.off()
+
+
+
+
+
 
 # Do some diagnostics on the final dataset
 sam_valence_model <- aov(mean_valence ~ sam_scores_short, data = cells_combo)
