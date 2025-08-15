@@ -45,6 +45,7 @@ means_df <- cbind(means_df, anew_scores)
 # Load package for plotting
 library(ggplot2)
 library(viridis)
+library(ggrepel)
 
 # Make a circumplex plot
 # internal keys (from interaction) -> colors
@@ -204,32 +205,32 @@ ggsave(
 # Now lets make a circumplex plot for cells_combo
 # This plot labels each data point using the SAM values
 sam_key_vals <- c(
-  "Negative Valence Low Arousal"  = "#7f3b08",
-  "Positive Valence Low Arousal"  = "#fdb863",
-  "Negative Valence High Arousal" = "#b2abd2",
-  "Positive Valence High Arousal" = "#2d004b"
+  "NLA"  = "#7f3b08",
+  "PLA"  = "#fdb863",
+  "NHA" = "#b2abd2",
+  "PHA" = "#2d004b"
 )
 
-sam_circumplex_plot <- ggplot(cells_combo, aes(x = mean_valence, y = mean_arousal, color = sam_scores)) +
-  geom_point(size = 3) +
-  geom_errorbar(aes(ymin = mean_arousal - ci_arousal, ymax = mean_arousal + ci_arousal), width = 0.2) +
-  geom_errorbarh(aes(xmin = mean_valence - ci_valence, xmax = mean_valence + ci_valence), height = 0.2) +
-  labs(x = "SAM Valence", y = "SAM Arousal", color = "SAM Labels") +
+sam_circumplex_plot <- ggplot(cells_combo, aes(x = mean_valence, y = mean_arousal, color = sam_scores_short)) +
+  geom_point(size = 4) +
+  geom_errorbar(aes(ymin = mean_arousal - ci_arousal, ymax = mean_arousal + ci_arousal), width = 0.2, size = 1) +
+  geom_errorbarh(aes(xmin = mean_valence - ci_valence, xmax = mean_valence + ci_valence), height = 0.2, size = 1) +
+  labs(x = "Valence", y = "Arousal", color = "") +
   theme_classic() +
   scale_color_manual(
     values = sam_key_vals,
     breaks = names(sam_key_vals),
     drop = FALSE
   ) +
-  scale_x_continuous(limits = c(1, 9), breaks = 1:9) +
-  scale_y_continuous(limits = c(1, 9), breaks = 1:9) +
+#  scale_x_continuous(limits = c(1, 9), breaks = 1:9) +
+#  scale_y_continuous(limits = c(1, 9), breaks = 1:9) +
   theme(
     legend.position = "bottom",
     legend.box = "horizontal",
-    legend.text = element_text(size = 15),   # legend entries
-    legend.title = element_text(size = 17),  # legend title
-    axis.title = element_text(size = 17),    # axis labels
-    axis.text = element_text(size = 15)      # axis tick labels
+    legend.text = element_text(size = 30),   # legend entries
+    legend.title = element_text(size = 36),  # legend title
+    axis.title = element_text(size = 36),    # axis labels
+    axis.text = element_text(size = 30)      # axis tick labels
   ) +
   guides(color = guide_legend(nrow = 2))
 
@@ -248,6 +249,91 @@ ggsave(
 # Save as EPS
 ggsave(
   filename = "sam_sam_circumplex.eps",
+  plot = sam_circumplex_plot,
+  width = 8.5,
+  height = 8.5,
+  units = "in",
+  dpi = 300,
+  device = cairo_ps   # ensures high-quality EPS export
+)
+
+
+# Same plot, but now publication ready
+
+sam_key_vals <- c(
+  "Negative Valence Low Arousal"  = "#7f3b08",
+  "Positive Valence Low Arousal"  = "#fdb863",
+  "Negative Valence High Arousal" = "#b2abd2",
+  "Positive Valence High Arousal" = "#2d004b"
+)
+
+# Centroids + multi-line labels (same as you have)
+label_df <- cells_combo %>%
+  group_by(sam_scores) %>%
+  summarise(
+    mean_valence = mean(mean_valence, na.rm = TRUE),
+    mean_arousal = mean(mean_arousal, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    sam_label_multiline = sub(" Valence ", " Valence\n", sam_scores, fixed = TRUE)
+  )
+
+sam_circumplex_plot <- ggplot(cells_combo, aes(x = mean_valence, y = mean_arousal, color = sam_scores)) +
+  # make the data a bit lighter so labels pop
+  geom_point(size = 4, alpha = 0.6) +
+  geom_errorbar(aes(ymin = mean_arousal - ci_arousal, ymax = mean_arousal + ci_arousal),
+                width = 0.2, size = 1, alpha = 0.95) +
+  geom_errorbarh(aes(xmin = mean_valence - ci_valence, xmax = mean_valence + ci_valence),
+                 height = 0.2, size = 1, alpha = 0.95) +
+  
+  # REPELLED LABELS with white background
+  geom_label_repel(
+    data = label_df,
+    aes(x = mean_valence, y = mean_arousal,
+        label = sam_label_multiline),
+    fill = alpha("white", 0.65),           # white box behind text
+    label.size = 0,           # no border line (use >0 to draw border)
+#    fontface = "bold",
+    size = 12,                 # mm; adjust to taste
+    lineheight = 0.9,
+    box.padding = 0.35,       # more padding -> more separation from points
+    point.padding = 0.5,
+    force = 1.2,              # increase if labels still collide
+    max.overlaps = Inf,
+    segment.color = NA,       # hide leader lines; remove this to show them
+    seed = 123,               # reproducible placement
+    inherit.aes = FALSE,
+    show.legend = FALSE
+  ) +
+  
+  labs(x = "Valence", y = "Arousal") +
+  theme_classic() +
+  scale_color_manual(values = sam_key_vals,
+                     breaks = names(sam_key_vals),
+                     drop = FALSE) +
+  theme(
+    legend.position = "none",
+    axis.title = element_text(size = 36),
+    axis.text  = element_text(size = 30)
+  )
+
+plot(sam_circumplex_plot)
+
+
+# Save as PNG
+ggsave(
+  filename = "circumplex_pub.png",
+  plot = sam_circumplex_plot,
+  width = 8.5,
+  height = 8.5,
+  units = "in",
+  dpi = 300
+)
+
+# Save as EPS
+ggsave(
+  filename = "circumplex_pub.eps",
   plot = sam_circumplex_plot,
   width = 8.5,
   height = 8.5,
@@ -343,10 +429,6 @@ corrplot(M, method="color", col=col(200),
          diag=FALSE,
          mar=c(0,0,1,0))
 dev.off()
-
-
-
-
 
 
 # Do some diagnostics on the final dataset
