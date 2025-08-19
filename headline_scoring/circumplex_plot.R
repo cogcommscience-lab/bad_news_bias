@@ -343,6 +343,46 @@ ggsave(
 )
 
 
+# Inferential Statistics on selected headlines
+library(effectsize)
+
+# Set relevant variables as factor:
+cells_combo$sam_valence_label_short <- factor(cells_combo$sam_valence_label_short,
+                                              levels = c("N", "P"))
+
+cells_combo$sam_arousak_label_short <- factor(cells_combo$sam_arousal_label_short,
+                                              levels = c("LA", "HA"))
+
+
+# Independent samples t-test for valence
+t_test_valence <- t.test(mean_valence ~ sam_valence_label_short, data = cells_combo, var.equal = TRUE)
+print(t_test_valence)
+
+# Compute Cohen's d for valence
+cohen_d_valence <- cohens_d(mean_valence ~ sam_valence_label_short, data = cells_combo)
+print(cohen_d_valence)
+
+# Calculate group means, SD for valence
+mean(cells_combo$mean_valence[cells_combo$sam_valence_label_short == "N"], na.rm = TRUE)
+mean(cells_combo$mean_valence[cells_combo$sam_valence_label_short == "P"], na.rm = TRUE)
+sd(cells_combo$mean_valence[cells_combo$sam_valence_label_short == "N"], na.rm = TRUE)
+sd(cells_combo$mean_valence[cells_combo$sam_valence_label_short == "P"], na.rm = TRUE)
+
+# Independent samples t-test for arousal
+t_test_arousal <- t.test(mean_arousal ~ sam_arousal_label_short, data = cells_combo, var.equal = TRUE)
+print(t_test_arousal)
+
+# Compute Cohen's d for arousal
+cohen_d_arousal <- cohens_d(mean_arousal ~ sam_arousal_label_short, data = cells_combo)
+print(cohen_d_arousal)
+
+# Calculate group means, SD for arousal
+mean(cells_combo$mean_arousal[cells_combo$sam_arousal_label_short == "LA"], na.rm = TRUE)
+mean(cells_combo$mean_arousal[cells_combo$sam_arousal_label_short == "HA"], na.rm = TRUE)
+sd(cells_combo$mean_arousal[cells_combo$sam_arousal_label_short == "LA"], na.rm = TRUE)
+sd(cells_combo$mean_arousal[cells_combo$sam_arousal_label_short == "HA"], na.rm = TRUE)
+
+
 # Look at correlation between ANEW and self-reports
 corrmatrix <- df[,c(3,7,11,15,19,23,27,37,38,40,41,42,43,44)]
 
