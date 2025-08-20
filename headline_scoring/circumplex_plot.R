@@ -439,35 +439,70 @@ colnames(M) <- var_labels[colnames(M)]
 rownames(p.mat) <- var_labels[rownames(p.mat)]
 colnames(p.mat) <- var_labels[colnames(p.mat)]
 
+
 ## Plot a big matrix
-## Only results significant at p < .00059 are displayed (Bonferroni correction)
-col <- colorRampPalette(c("#7f3b08", "#fdb863", "#f7f7f7", "#b2abd2", "#2d004b"))
+# Set Bonferroni Correction value and title (if using)
+alpha <- 0.00059
 title <- "Bonferroni Corrected (p < .00059) Correlations For Automated Textual Analysis & Self-Report Data"
 
+# Custom palette
+col <- colorRampPalette(c("#7f3b08", "#fdb863", "#f7f7f7", "#b2abd2", "#2d004b"))
+
+# Fix a single ordering used everywhere
+ord   <- corrplot::corrMatOrder(M, order = "hclust")
+M_ord <- M[ord, ord]
+p_ord <- p.mat[ord, ord]
+
 # Save as PNG
-png("cormatrix.png", width = 12, height = 12, units = "in", res = 300)
-corrplot(M, method="color", col=col(200),  
-         type="upper", order="hclust", 
-         title=title,
-         addCoef.col = "black",
-         tl.col="black", tl.srt=45,
-         p.mat = p.mat, sig.level = 0.00059, insig = "blank", 
-         diag=FALSE,
-         mar=c(0,0,1,0))
+png("cormatrix.png", width = 6.5, height = 5.5, units = "in", res = 300)
+
+par(mfrow = c(1,1), mar = c(2,2,2,2), oma = c(0,0,0,0))
+
+# Base heatmap (with custom colormap)
+corrplot(M_ord, method = "color", col = col(200),
+         type = "full", order = "original",
+         tl.col = "black", tl.srt = 45, tl.cex = 0.7,
+         cl.cex = 0.7, diag = FALSE, addgrid.col = NA,
+         mar = c(1,1,2,1))
+
+# Add coefficients in LOWER triangle
+corrplot(M_ord, add = TRUE, type = "lower", method = "color", col = col(200),
+         tl.pos = "n", cl.pos = "n", diag = FALSE,
+         addCoef.col = "black", number.cex = 0.6, number.digits = 2)
+
+# Add stars in UPPER triangle
+corrplot(M_ord, add = TRUE, type = "upper", method = "color", col = col(200),
+         tl.pos = "n", cl.pos = "n", diag = FALSE,
+         p.mat = p_ord, sig.level = alpha,
+         insig = "label_sig", pch = "*", pch.cex = 0.9, pch.col = "black")
+
 dev.off()
 
 # Save as EPS
 setEPS()
-postscript("cormatrix.eps", width = 12, height = 12, horizontal = FALSE,
+postscript("cormatrix.eps", width = 6.5, height = 5.5, horizontal = FALSE,
            onefile = FALSE, paper = "special")
-corrplot(M, method="color", col=col(200),  
-         type="upper", order="hclust", 
-         title=title,
-         addCoef.col = "black",
-         tl.col="black", tl.srt=45,
-         p.mat = p.mat, sig.level = 0.00059, insig = "blank", 
-         diag=FALSE,
-         mar=c(0,0,1,0))
+
+par(mfrow = c(1,1), mar = c(2,2,2,2), oma = c(0,0,0,0))
+
+# Base heatmap (with custom colormap)
+corrplot(M_ord, method = "color", col = col(200),
+         type = "full", order = "original",
+         tl.col = "black", tl.srt = 45, tl.cex = 0.7,
+         cl.cex = 0.7, diag = FALSE, addgrid.col = NA,
+         mar = c(1,1,2,1))
+
+# Add coefficients in LOWER triangle
+corrplot(M_ord, add = TRUE, type = "lower", method = "color", col = col(200),
+         tl.pos = "n", cl.pos = "n", diag = FALSE,
+         addCoef.col = "black", number.cex = 0.6, number.digits = 2)
+
+# Add stars in UPPER triangle
+corrplot(M_ord, add = TRUE, type = "upper", method = "color", col = col(200),
+         tl.pos = "n", cl.pos = "n", diag = FALSE,
+         p.mat = p_ord, sig.level = alpha,
+         insig = "label_sig", pch = "*", pch.cex = 0.9, pch.col = "black")
+
 dev.off()
 
 
