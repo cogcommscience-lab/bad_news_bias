@@ -197,5 +197,5 @@ Circumplex plot showing ANEW labels (color) and SAM ratings (point estimates and
 Circumplex plot showing SAM labels (color) and SAM ratings (point estimates and uncertainty). Results show strong distinction betwee valence (high/low) and slightly weaker distinction between arousal (high/low). All cell levels are above/below the scale mean.
 ![Circumplex plot for 56 news headlines based on SAM ratings](https://github.com/cogcommscience-lab/bad_news_bias/blob/main/headline_scoring/sam_sam_circumplex.png?raw=true)
 
-Correlation matrix showing significant relationships between variables. N.S. correlations are not shown.
+Correlation matrix showing significant relationships between variables.
 ![Correlation matrix showing relationships between variables](https://github.com/cogcommscience-lab/bad_news_bias/blob/main/headline_scoring/cormatrix.png?raw=true)
