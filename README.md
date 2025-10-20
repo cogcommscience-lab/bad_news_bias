@@ -12,6 +12,7 @@ NOTE: This project is still in development and the code is still a work in progr
 - Xuanjun (Jason) Gong: https://cogcommscience.com/
 - Ezgi Ulusoy: https://comartsci.msu.edu/our-people/ezgi-ulusoy
 - Elizabeth Riggs: https://comm.osu.edu/people/riggs.160
+- Rachael Kee: https://cogcommscience.com/
 
 
 ## Project Rationale
